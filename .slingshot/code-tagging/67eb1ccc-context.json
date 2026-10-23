@@ -6,6 +6,15 @@
   "promptMessage": {
     "13a8c8e4": {
       "value": "update the whole project so that  can make it self hosted and give me the steps that i need to do"
+    },
+    "d3f9f7c0": {
+      "value": "fatal: not a git repository (or any of the parent directories): .git"
+    },
+    "ab113f17": {
+      "value": "git config user.name \"Agampreet Singh\""
+    },
+    "df485e9f": {
+      "value": "i need to change the git username it is Agasingh1"
     }
   },
   "localPrompts": {},

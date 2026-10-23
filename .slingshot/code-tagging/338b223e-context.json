@@ -1,0 +1,15 @@
+{
+  "filename": "GIT_SETUP_INSTRUCTIONS.md",
+  "path": "GIT_SETUP_INSTRUCTIONS.md",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "d3f9f7c0": {
+      "value": "fatal: not a git repository (or any of the parent directories): .git"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

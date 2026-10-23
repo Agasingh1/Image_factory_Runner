@@ -1,0 +1,1128 @@
+{
+  "GIT_SETUP_INSTRUCTIONS.md": {
+    "filename": "GIT_SETUP_INSTRUCTIONS.md",
+    "path": "GIT_SETUP_INSTRUCTIONS.md",
+    "version": "1.2",
+    "contextFile": "338b223e-context.json",
+    "chunks": {
+      "a01c7f": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792739573,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "d3f9f7c0"
+        },
+        "hash": "013e4a95",
+        "messageId": "system_eb28ed90-ceb0-11f1-9db6-9508a8babbdd",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:42:53 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "a01c7f",
+        "hash": "34cd3764",
+        "encoded": "#%20Git%20Setup%20Instructions",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "a01c7f",
+        "hash": "3ec43acf",
+        "encoded": "%E2%9C%85%20**Git%20repository%20initialized!**%20Your%20project%20is%20now%20ready%20to%20be%20pushed%20to%20GitHub.",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "a01c7f",
+        "hash": "9c2b162c",
+        "encoded": "##%20What%20Was%20Done",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "a01c7f",
+        "hash": "744f1b09",
+        "encoded": "1.%20%E2%9C%85%20Initialized%20git%20repository%20(%60git%20init%60)",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "a01c7f",
+        "hash": "f1b760cc",
+        "encoded": "2.%20%E2%9C%85%20Created%20%5B.gitignore%5D(.gitignore)%20file%20to%20exclude%20build%20artifacts%20and%20logs",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "a01c7f",
+        "hash": "c9876ba8",
+        "encoded": "3.%20%E2%9C%85%20Staged%20all%20project%20files%20(%60git%20add%20.%60)",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "a01c7f",
+        "hash": "51e4098d",
+        "encoded": "4.%20%E2%8F%B3%20**Ready%20for%20commit%20and%20push**",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "a01c7f",
+        "hash": "6be0945c",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "a01c7f",
+        "hash": "db3f9a3c",
+        "encoded": "##%20Next%20Steps%20to%20Push%20to%20GitHub",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "a01c7f",
+        "hash": "19e1df95",
+        "encoded": "###%20Step%201:%20Update%20Git%20User%20Information",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "a01c7f",
+        "hash": "f81b8132",
+        "encoded": "Before%20committing,%20set%20your%20actual%20name%20and%20email:",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "a01c7f",
+        "hash": "2e4972e5",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "a01c7f",
+        "hash": "a5e4aa51",
+        "encoded": "#%20Replace%20with%20your%20actual%20name%20and%20email",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "a01c7f",
+        "hash": "1faf577d",
+        "encoded": "git%20config%20user.name%20%22Your%20Actual%20Name%22",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "a01c7f",
+        "hash": "6455928d",
+        "encoded": "git%20config%20user.email%20%22your.email@example.com%22",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "a01c7f",
+        "hash": "1486b488",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "a01c7f",
+        "hash": "7b7b87d9",
+        "encoded": "**Example:**",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "a01c7f",
+        "hash": "405adf8c",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "a01c7f",
+        "hash": "5ba15b2e",
+        "encoded": "git%20config%20user.name%20%22John%20Doe%22",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "a01c7f",
+        "hash": "fe9f7e2e",
+        "encoded": "git%20config%20user.email%20%22john.doe@company.com%22",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "a01c7f",
+        "hash": "5d2de7a5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "a01c7f",
+        "hash": "7d3f9bd4",
+        "encoded": "###%20Step%202:%20Create%20Initial%20Commit",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "a01c7f",
+        "hash": "2307d50b",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "a01c7f",
+        "hash": "3c9f911a",
+        "encoded": "git%20commit%20-m%20%22Configure%20project%20for%20self-hosted%20GitHub%20Actions%20runner%22",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "a01c7f",
+        "hash": "a355a5c4",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "a01c7f",
+        "hash": "bd3a68a2",
+        "encoded": "###%20Step%203:%20Create%20GitHub%20Repository",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "a01c7f",
+        "hash": "94a5f951",
+        "encoded": "**Option%20A:%20Using%20GitHub%20Web%20UI**",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "a01c7f",
+        "hash": "66d5c14c",
+        "encoded": "1.%20Go%20to%20%5Bgithub.com%5D(https://github.com)%20and%20sign%20in",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "a01c7f",
+        "hash": "8985b821",
+        "encoded": "2.%20Click%20the%20**+**%20icon%20(top%20right)%20%E2%86%92%20**New%20repository**",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "a01c7f",
+        "hash": "99aea541",
+        "encoded": "3.%20Configure:",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "a01c7f",
+        "hash": "6a320f5b",
+        "encoded": "-%20**Repository%20name:**%20%60image-factory-demo%60%20(or%20your%20preferred%20name)",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "a01c7f",
+        "hash": "efffcc41",
+        "encoded": "-%20**Description:**%20Windows%20Image%20Factory%20with%20self-hosted%20GitHub%20Actions%20runner",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "a01c7f",
+        "hash": "664d0b59",
+        "encoded": "-%20**Visibility:**%20Public%20or%20Private%20(your%20choice)",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "a01c7f",
+        "hash": "5a822679",
+        "encoded": "-%20%E2%9A%A0%EF%B8%8F%20**DO%20NOT**%20initialize%20with%20README,%20.gitignore,%20or%20license",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "a01c7f",
+        "hash": "7a13a66b",
+        "encoded": "4.%20Click%20**Create%20repository**",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "a01c7f",
+        "hash": "5b2a2806",
+        "encoded": "5.%20**Copy%20the%20repository%20URL**%20(e.g.,%20%60https://github.com/YOUR_USERNAME/image-factory-demo.git%60)",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "a01c7f",
+        "hash": "62f1705b",
+        "encoded": "**Option%20B:%20Using%20GitHub%20CLI%20(if%20installed)**",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "a01c7f",
+        "hash": "b49fda4b",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "a01c7f",
+        "hash": "47ef39d7",
+        "encoded": "#%20Create%20repository%20using%20gh%20CLI",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "a01c7f",
+        "hash": "f9021f74",
+        "encoded": "gh%20repo%20create%20image-factory-demo%20--public%20--source=.%20--remote=origin",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "a01c7f",
+        "hash": "4864eb05",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "a01c7f",
+        "hash": "a00c7028",
+        "encoded": "###%20Step%204:%20Add%20Remote%20and%20Push",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "a01c7f",
+        "hash": "e570053c",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "a01c7f",
+        "hash": "9e5a62da",
+        "encoded": "#%20Add%20GitHub%20repository%20as%20remote%20(replace%20with%20your%20actual%20URL)",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "a01c7f",
+        "hash": "848dc1c8",
+        "encoded": "git%20remote%20add%20origin%20https://github.com/YOUR_USERNAME/image-factory-demo.git",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "a01c7f",
+        "hash": "b5419881",
+        "encoded": "#%20Rename%20branch%20to%20main%20(if%20needed)",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "a01c7f",
+        "hash": "fe2d9bda",
+        "encoded": "git%20branch%20-M%20main",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "a01c7f",
+        "hash": "94c1975e",
+        "encoded": "#%20Push%20to%20GitHub",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "a01c7f",
+        "hash": "dac989d8",
+        "encoded": "git%20push%20-u%20origin%20main",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "a01c7f",
+        "hash": "19eee76e",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "a01c7f",
+        "hash": "4b72a191",
+        "encoded": "**Complete%20Example:**",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "a01c7f",
+        "hash": "cec7d308",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "a01c7f",
+        "hash": "97b920ae",
+        "encoded": "git%20remote%20add%20origin%20https://github.com/johndoe/image-factory-demo.git",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "a01c7f",
+        "hash": "797afb62",
+        "encoded": "git%20branch%20-M%20main",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "a01c7f",
+        "hash": "0f5a2854",
+        "encoded": "git%20push%20-u%20origin%20main",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "a01c7f",
+        "hash": "930da210",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "a01c7f",
+        "hash": "3faafe80",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "a01c7f",
+        "hash": "478884d5",
+        "encoded": "##%20Verification",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "a01c7f",
+        "hash": "8e55f203",
+        "encoded": "After%20pushing,%20verify:",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "a01c7f",
+        "hash": "a0a106df",
+        "encoded": "1.%20%E2%9C%85%20Go%20to%20your%20GitHub%20repository%20URL%20in%20browser",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "a01c7f",
+        "hash": "112154ca",
+        "encoded": "2.%20%E2%9C%85%20You%20should%20see%20all%20files%20including:",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "a01c7f",
+        "hash": "e196b2a4",
+        "encoded": "-%20%5BREADME.md%5D(README.md)",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "a01c7f",
+        "hash": "2aa62d00",
+        "encoded": "-%20%5BSELF_HOSTED_SETUP.md%5D(SELF_HOSTED_SETUP.md)",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "a01c7f",
+        "hash": "e6739a4f",
+        "encoded": "-%20%5B.github/workflows/image-factory.yml%5D(.github/workflows/image-factory.yml)",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "a01c7f",
+        "hash": "4c77e282",
+        "encoded": "3.%20%E2%9C%85%20GitHub%20Actions%20tab%20should%20show%20the%20workflow%20(not%20yet%20run)",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "a01c7f",
+        "hash": "c43d36a6",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "a01c7f",
+        "hash": "d589df30",
+        "encoded": "##%20Complete%20Command%20Sequence%20(Copy-Paste%20Ready)",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "a01c7f",
+        "hash": "12ef31de",
+        "encoded": "**Replace%20placeholders%20with%20your%20actual%20information:**",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "a01c7f",
+        "hash": "2d46cc7e",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "a01c7f",
+        "hash": "43ab124f",
+        "encoded": "#%20Step%201:%20Set%20git%20user%20info",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "a01c7f",
+        "hash": "fd12bb85",
+        "encoded": "git%20config%20user.name%20%22YOUR_NAME%22",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "a01c7f",
+        "hash": "99c57f43",
+        "encoded": "git%20config%20user.email%20%22YOUR_EMAIL%22",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "a01c7f",
+        "hash": "68c12d97",
+        "encoded": "#%20Step%202:%20Commit",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "a01c7f",
+        "hash": "492792b0",
+        "encoded": "git%20commit%20-m%20%22Configure%20project%20for%20self-hosted%20GitHub%20Actions%20runner%22",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "a01c7f",
+        "hash": "d304276a",
+        "encoded": "#%20Step%203:%20Add%20remote%20(replace%20URL)",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "a01c7f",
+        "hash": "5de9eb21",
+        "encoded": "git%20remote%20add%20origin%20https://github.com/YOUR_USERNAME/YOUR_REPO.git",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "a01c7f",
+        "hash": "d333f9e1",
+        "encoded": "#%20Step%204:%20Rename%20branch%20and%20push",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "a01c7f",
+        "hash": "e8a2858d",
+        "encoded": "git%20branch%20-M%20main",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "a01c7f",
+        "hash": "bf3a4db2",
+        "encoded": "git%20push%20-u%20origin%20main",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "a01c7f",
+        "hash": "6c46ab95",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "a01c7f",
+        "hash": "e8a33f8d",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "a01c7f",
+        "hash": "73d5607b",
+        "encoded": "##%20What's%20Included%20in%20This%20Commit",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "a01c7f",
+        "hash": "014488b2",
+        "encoded": "###%20Documentation%20Files%20(New)",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "a01c7f",
+        "hash": "a0889faf",
+        "encoded": "-%20%E2%9C%85%20%5BREADME.md%5D(README.md)%20-%20Project%20overview",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "a01c7f",
+        "hash": "5f335bb5",
+        "encoded": "-%20%E2%9C%85%20%5BSELF_HOSTED_SETUP.md%5D(SELF_HOSTED_SETUP.md)%20-%20Complete%20setup%20guide",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "a01c7f",
+        "hash": "c27f40fb",
+        "encoded": "-%20%E2%9C%85%20%5BQUICK_START.md%5D(QUICK_START.md)%20-%20Quick%20reference",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "a01c7f",
+        "hash": "1f2e345d",
+        "encoded": "-%20%E2%9C%85%20%5BARCHITECTURE.md%5D(ARCHITECTURE.md)%20-%20System%20architecture",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "a01c7f",
+        "hash": "ca2393e8",
+        "encoded": "-%20%E2%9C%85%20%5BTROUBLESHOOTING.md%5D(TROUBLESHOOTING.md)%20-%20Problem%20solving",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "a01c7f",
+        "hash": "630aac16",
+        "encoded": "-%20%E2%9C%85%20%5BSETUP_STEPS_SUMMARY.md%5D(SETUP_STEPS_SUMMARY.md)%20-%20Complete%20checklist",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "a01c7f",
+        "hash": "bf332704",
+        "encoded": "-%20%E2%9C%85%20%5B.gitignore%5D(.gitignore)%20-%20Git%20exclusions",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "a01c7f",
+        "hash": "3ff8e9b5",
+        "encoded": "###%20Modified%20Files",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "a01c7f",
+        "hash": "292cbd32",
+        "encoded": "-%20%E2%9C%85%20%5B.github/workflows/image-factory.yml%5D(.github/workflows/image-factory.yml)%20-%20Self-hosted%20runner%20config",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "a01c7f",
+        "hash": "a88ffcac",
+        "encoded": "###%20Existing%20Project%20Files",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "a01c7f",
+        "hash": "6afffdbf",
+        "encoded": "-%20All%20PowerShell%20scripts%20in%20%60scripts/%60",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "a01c7f",
+        "hash": "dee7f52b",
+        "encoded": "-%20Configuration%20files%20in%20%60configs/%60",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "a01c7f",
+        "hash": "b04cb202",
+        "encoded": "-%20Packer%20templates%20in%20%60packer/%60",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "a01c7f",
+        "hash": "4f38aa06",
+        "encoded": "-%20Test%20files%20in%20%60tests/%60",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "a01c7f",
+        "hash": "4947a86b",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "a01c7f",
+        "hash": "5bb040ba",
+        "encoded": "##%20Troubleshooting%20Git%20Setup",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "a01c7f",
+        "hash": "7e0f9934",
+        "encoded": "###%20%22Authentication%20Failed%22%20When%20Pushing",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "a01c7f",
+        "hash": "2aca53a3",
+        "encoded": "**Solution%201:%20Use%20Personal%20Access%20Token%20(PAT)**",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "a01c7f",
+        "hash": "c0084474",
+        "encoded": "1.%20GitHub%20%E2%86%92%20Settings%20%E2%86%92%20Developer%20settings%20%E2%86%92%20Personal%20access%20tokens%20%E2%86%92%20Tokens%20(classic)",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "a01c7f",
+        "hash": "6dada7f4",
+        "encoded": "2.%20Generate%20new%20token%20(classic)",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "a01c7f",
+        "hash": "f1807011",
+        "encoded": "3.%20Select%20scopes:%20%60repo%60%20(all)",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "a01c7f",
+        "hash": "aae7950c",
+        "encoded": "4.%20Copy%20token%20and%20save%20securely",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "a01c7f",
+        "hash": "29170061",
+        "encoded": "5.%20When%20prompted%20for%20password%20during%20push,%20use%20token%20instead",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "a01c7f",
+        "hash": "ae73a351",
+        "encoded": "**Solution%202:%20Use%20SSH**",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "a01c7f",
+        "hash": "91221d61",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "a01c7f",
+        "hash": "3383bcd1",
+        "encoded": "#%20Generate%20SSH%20key%20(if%20not%20exists)",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "a01c7f",
+        "hash": "839c9f53",
+        "encoded": "ssh-keygen%20-t%20ed25519%20-C%20%22your.email@example.com%22",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "a01c7f",
+        "hash": "f430e2dc",
+        "encoded": "#%20Add%20to%20SSH%20agent",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "a01c7f",
+        "hash": "3bf0cec1",
+        "encoded": "Get-Service%20ssh-agent%20%7C%20Set-Service%20-StartupType%20Automatic",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "a01c7f",
+        "hash": "41c4b682",
+        "encoded": "Start-Service%20ssh-agent",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "a01c7f",
+        "hash": "45d9897a",
+        "encoded": "ssh-add%20~%5C.ssh%5Cid_ed25519",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "a01c7f",
+        "hash": "455f6c1a",
+        "encoded": "#%20Copy%20public%20key",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "a01c7f",
+        "hash": "83b56f66",
+        "encoded": "Get-Content%20~%5C.ssh%5Cid_ed25519.pub%20%7C%20Set-Clipboard",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "a01c7f",
+        "hash": "eb252435",
+        "encoded": "#%20Add%20to%20GitHub:%20Settings%20%E2%86%92%20SSH%20and%20GPG%20keys%20%E2%86%92%20New%20SSH%20key",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "a01c7f",
+        "hash": "aec2a0f6",
+        "encoded": "#%20Paste%20key%20and%20save",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "a01c7f",
+        "hash": "58031d28",
+        "encoded": "#%20Update%20remote%20URL%20to%20use%20SSH",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "a01c7f",
+        "hash": "4fd23ebc",
+        "encoded": "git%20remote%20set-url%20origin%20git@github.com:YOUR_USERNAME/YOUR_REPO.git",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "a01c7f",
+        "hash": "19abaff6",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "a01c7f",
+        "hash": "0246a440",
+        "encoded": "###%20%22Repository%20Already%20Exists%22%20on%20GitHub",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "a01c7f",
+        "hash": "bb6f1376",
+        "encoded": "If%20you%20already%20created%20the%20repository:",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "a01c7f",
+        "hash": "58bab404",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "a01c7f",
+        "hash": "e045fe8a",
+        "encoded": "#%20Just%20add%20remote%20and%20push",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "a01c7f",
+        "hash": "c892864a",
+        "encoded": "git%20remote%20add%20origin%20https://github.com/YOUR_USERNAME/YOUR_REPO.git",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "a01c7f",
+        "hash": "abc020be",
+        "encoded": "git%20push%20-u%20origin%20main",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "a01c7f",
+        "hash": "823cbf55",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "a01c7f",
+        "hash": "2996b6a6",
+        "encoded": "###%20%22Permission%20Denied%22%20or%20%22403%20Forbidden%22",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "a01c7f",
+        "hash": "dbc3f512",
+        "encoded": "-%20Verify%20you're%20logged%20into%20correct%20GitHub%20account",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "a01c7f",
+        "hash": "5f621b38",
+        "encoded": "-%20Check%20repository%20permissions%20(must%20be%20owner%20or%20have%20write%20access)",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "a01c7f",
+        "hash": "e7853c6e",
+        "encoded": "-%20Ensure%20PAT%20has%20correct%20scopes",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "a01c7f",
+        "hash": "0e461f7a",
+        "encoded": "###%20%22Updates%20Were%20Rejected%22%20(Non-Fast-Forward)",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "a01c7f",
+        "hash": "014883e0",
+        "encoded": "If%20repository%20has%20existing%20commits:",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "a01c7f",
+        "hash": "4299d728",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "a01c7f",
+        "hash": "4ef1ab62",
+        "encoded": "#%20Pull%20first,%20then%20push",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "a01c7f",
+        "hash": "65afb0ad",
+        "encoded": "git%20pull%20origin%20main%20--allow-unrelated-histories",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "a01c7f",
+        "hash": "92b0c3bb",
+        "encoded": "git%20push%20-u%20origin%20main",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "a01c7f",
+        "hash": "cf0ca1be",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "a01c7f",
+        "hash": "98332756",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "a01c7f",
+        "hash": "0b003277",
+        "encoded": "##%20After%20Pushing%20to%20GitHub",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "a01c7f",
+        "hash": "5c3f8d8e",
+        "encoded": "###%20Immediate%20Next%20Steps",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "a01c7f",
+        "hash": "3502127b",
+        "encoded": "1.%20**Set%20up%20self-hosted%20runner**%20%E2%86%92%20Follow%20%5BSELF_HOSTED_SETUP.md%5D(SELF_HOSTED_SETUP.md)",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "a01c7f",
+        "hash": "94dbb576",
+        "encoded": "2.%20**Configure%20runner%20labels**%20%E2%86%92%20Use%20%60%5Bself-hosted,%20windows%5D%60",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "a01c7f",
+        "hash": "c0c75639",
+        "encoded": "3.%20**Test%20workflow**%20%E2%86%92%20Actions%20tab%20%E2%86%92%20Run%20workflow",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "a01c7f",
+        "hash": "83f7eecf",
+        "encoded": "###%20Update%20README%20Badge",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "a01c7f",
+        "hash": "3655c9c3",
+        "encoded": "In%20%5BREADME.md%5D(README.md),%20update%20the%20badge%20URL:",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "a01c7f",
+        "hash": "895d6438",
+        "encoded": "%60%60%60markdown",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "a01c7f",
+        "hash": "6ca8e46f",
+        "encoded": "%5B!%5BWindows%20Image%20Factory%20Demo%5D(https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/image-factory.yml/badge.svg)%5D(https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/image-factory.yml)",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "a01c7f",
+        "hash": "b76731c7",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "a01c7f",
+        "hash": "184bd683",
+        "encoded": "Replace%20%60YOUR_USERNAME%60%20and%20%60YOUR_REPO%60%20with%20actual%20values.",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "a01c7f",
+        "hash": "ad70c2ce",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "a01c7f",
+        "hash": "0e32d735",
+        "encoded": "##%20Future%20Git%20Operations",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "a01c7f",
+        "hash": "17c7a9e4",
+        "encoded": "###%20Making%20Changes",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "a01c7f",
+        "hash": "d8a1ee6a",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "a01c7f",
+        "hash": "1c8e7034",
+        "encoded": "#%20After%20editing%20files",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "a01c7f",
+        "hash": "76930532",
+        "encoded": "git%20add%20.",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "a01c7f",
+        "hash": "97de1ea2",
+        "encoded": "git%20commit%20-m%20%22Description%20of%20changes%22",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "a01c7f",
+        "hash": "bf7f6c11",
+        "encoded": "git%20push",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "a01c7f",
+        "hash": "5e86e250",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "a01c7f",
+        "hash": "fff68680",
+        "encoded": "###%20Checking%20Status",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "a01c7f",
+        "hash": "596d507a",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "a01c7f",
+        "hash": "8817f69a",
+        "encoded": "git%20status%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20See%20what%20changed",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "a01c7f",
+        "hash": "d84fa5b9",
+        "encoded": "git%20log%20--oneline%20-10%20%20%20#%20Recent%20commits",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "a01c7f",
+        "hash": "7ed6fa22",
+        "encoded": "git%20diff%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20See%20uncommitted%20changes",
+        "prevChunkIds": []
+      },
+      "235": {
+        "chunkId": "a01c7f",
+        "hash": "74c5597a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "a01c7f",
+        "hash": "bf0a42aa",
+        "encoded": "###%20Creating%20Branches",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "a01c7f",
+        "hash": "b29b83b9",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "a01c7f",
+        "hash": "13bb78b8",
+        "encoded": "#%20Create%20and%20switch%20to%20new%20branch",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "a01c7f",
+        "hash": "78a9bf3f",
+        "encoded": "git%20checkout%20-b%20feature/new-feature",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "a01c7f",
+        "hash": "a48bc924",
+        "encoded": "#%20Make%20changes,%20commit",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "a01c7f",
+        "hash": "3baba44a",
+        "encoded": "git%20add%20.",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "a01c7f",
+        "hash": "2c0c7d50",
+        "encoded": "git%20commit%20-m%20%22Add%20new%20feature%22",
+        "prevChunkIds": []
+      },
+      "247": {
+        "chunkId": "a01c7f",
+        "hash": "9dfdc292",
+        "encoded": "#%20Push%20branch",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "a01c7f",
+        "hash": "8ac70ad4",
+        "encoded": "git%20push%20-u%20origin%20feature/new-feature",
+        "prevChunkIds": []
+      },
+      "250": {
+        "chunkId": "a01c7f",
+        "hash": "4a559bd0",
+        "encoded": "#%20Create%20PR%20on%20GitHub",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "a01c7f",
+        "hash": "f235f25a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "a01c7f",
+        "hash": "e7ef4223",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "a01c7f",
+        "hash": "97ed5d53",
+        "encoded": "##%20Summary",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "a01c7f",
+        "hash": "8db7f3be",
+        "encoded": "%E2%9C%85%20Repository%20is%20initialized%20and%20ready",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "a01c7f",
+        "hash": "10ec25d3",
+        "encoded": "%E2%8F%B3%20**Next:**%20Run%20the%20PowerShell%20commands%20above%20to%20commit%20and%20push",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "a01c7f",
+        "hash": "c78dc166",
+        "encoded": "%F0%9F%8E%AF%20**Goal:**%20Get%20code%20on%20GitHub%20so%20you%20can%20set%20up%20self-hosted%20runner",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "a01c7f",
+        "hash": "17e6eb51",
+        "encoded": "**Need%20help?**%20Check%20troubleshooting%20section%20above%20or%20refer%20to%20%5BGit%20documentation%5D(https://git-scm.com/doc).",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

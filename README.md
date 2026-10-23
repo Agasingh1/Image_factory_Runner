@@ -37,7 +37,7 @@ image-factory-demo/
 │   ├── windows.pkr.hcl          # Packer template
 │   └── variables.pkr.hcl.example # Packer variables
 ├── artifacts/                   # Build outputs (generated)
-└── SELF_HOSTED_SETUP.md        # Self-hosted runner setup guide
+└── COMPLETE_SETUP_GUIDE.md     # Complete self-hosted runner setup guide
 ```
 
 ## Quick Start
@@ -52,19 +52,22 @@ image-factory-demo/
 
 1. **Fork or clone this repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/image-factory-demo.git
-   cd image-factory-demo
+   git clone https://github.com/Agasingh1/Image_factory_Runner.git
+   cd Image_factory_Runner
    ```
 
 2. **Set up your self-hosted runner**
    
-   Follow the comprehensive guide: **[SELF_HOSTED_SETUP.md](SELF_HOSTED_SETUP.md)**
+   Follow the comprehensive guide: **[COMPLETE_SETUP_GUIDE.md](COMPLETE_SETUP_GUIDE.md)**
    
-   This guide covers:
+   This guide covers everything in one place:
    - Creating a Windows VM in GCP
+   - Connecting via RDP
    - Installing required software
    - Registering the GitHub runner
    - Testing your setup
+   - Troubleshooting
+   - Daily operations
 
 3. **Push a change or run workflow manually**
    ```bash

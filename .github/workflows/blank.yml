@@ -1,0 +1,167 @@
+name: Deploy Latest Golden Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      vm_name:
+        description: "Name of the new Windows VM"
+        required: true
+        default: "mcd-pos-deploy-01"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      PROJECT_ID: burner-anstiwar-7035
+      ZONE: us-central1-f
+      IMAGE_PREFIX: mcd-windows-2022-
+      VM_NAME: ${{ inputs.vm_name }}
+
+    steps:
+      - name: Authenticate to GCP using WIF
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Install Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v3
+
+      - name: Select latest golden image
+        id: image
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          IMAGE_NAME="$(
+            gcloud compute images list \
+              --project="$PROJECT_ID" \
+              --filter="name~'^${IMAGE_PREFIX}.*' AND status=READY" \
+              --sort-by="~creationTimestamp" \
+              --limit=1 \
+              --format="value(name)"
+          )"
+
+          if [[ -z "$IMAGE_NAME" ]]; then
+            echo "No matching READY golden image found."
+            exit 1
+          fi
+
+          echo "name=$IMAGE_NAME" >> "$GITHUB_OUTPUT"
+          echo "Selected image: $IMAGE_NAME"
+
+          gcloud compute images describe "$IMAGE_NAME" \
+            --project="$PROJECT_ID" \
+            --format="yaml(name,diskSizeGb,archiveSizeBytes,creationTimestamp)"
+
+      - name: Ensure IAP RDP firewall rule
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if ! gcloud compute firewall-rules describe \
+            allow-rdp-ingress-from-iap \
+            --project="$PROJECT_ID" >/dev/null 2>&1; then
+
+            gcloud compute firewall-rules create \
+              allow-rdp-ingress-from-iap \
+              --project="$PROJECT_ID" \
+              --network=default \
+              --direction=INGRESS \
+              --action=ALLOW \
+              --rules=tcp:3389 \
+              --source-ranges=35.235.240.0/20 \
+              --target-tags=windows-rdp
+          fi
+
+      - name: Create Windows VM
+        shell: bash
+        env:
+          IMAGE_NAME: ${{ steps.image.outputs.name }}
+        run: |
+          set -euo pipefail
+
+          if gcloud compute instances describe "$VM_NAME" \
+            --zone="$ZONE" --project="$PROJECT_ID" \
+            >/dev/null 2>&1; then
+            echo "VM $VM_NAME already exists; refusing to overwrite it."
+            exit 1
+          fi
+
+          gcloud compute instances create "$VM_NAME" \
+            --project="$PROJECT_ID" \
+            --zone="$ZONE" \
+            --machine-type=e2-medium \
+            --image="$IMAGE_NAME" \
+            --image-project="$PROJECT_ID" \
+            --boot-disk-size=60GB \
+            --boot-disk-type=pd-balanced \
+            --network=default \
+            --no-address \
+            --tags=windows-rdp
+
+      - name: Wait for VM to start
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for attempt in $(seq 1 30); do
+            STATUS="$(
+              gcloud compute instances describe "$VM_NAME" \
+                --zone="$ZONE" \
+                --project="$PROJECT_ID" \
+                --format="value(status)"
+            )"
+
+            echo "VM status: $STATUS"
+
+            if [[ "$STATUS" == "RUNNING" ]]; then
+              break
+            fi
+
+            if [[ "$attempt" == "30" ]]; then
+              echo "VM did not reach RUNNING within the wait period."
+              exit 1
+            fi
+
+            sleep 20
+          done
+
+          gcloud compute instances describe "$VM_NAME" \
+            --zone="$ZONE" \
+            --project="$PROJECT_ID" \
+            --format="yaml(name,status,networkInterfaces[0].networkIP)"
+
+      - name: Publish deployment details
+        shell: bash
+        env:
+          IMAGE_NAME: ${{ steps.image.outputs.name }}
+        run: |
+          {
+            echo "## Windows VM Deployment"
+            echo ""
+            echo "- VM: $VM_NAME"
+            echo "- Image: $IMAGE_NAME"
+            echo "- Zone: $ZONE"
+            echo ""
+            echo "### Step 1 — Run on your local Windows computer"
+            echo '```powershell'
+            echo "gcloud compute start-iap-tunnel $VM_NAME 3389 \`"
+            echo "  --zone=$ZONE \`"
+            echo "  --local-host-port=localhost:13389 \`"
+            echo "  --project=$PROJECT_ID"
+            echo '```'
+            echo ""
+            echo "Keep this terminal open while connected."
+            echo ""
+            echo "### Step 2 — Open another PowerShell window"
+            echo '```powershell'
+            echo 'mstsc /v:localhost:13389'
+            echo '```'
+            echo 'Run the local PowerShell RDP helper after Windows has finished initializing.'
+          } >> "$GITHUB_STEP_SUMMARY"

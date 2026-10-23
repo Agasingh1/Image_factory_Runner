@@ -1,0 +1,504 @@
+{
+  "QUICK_START.md": {
+    "filename": "QUICK_START.md",
+    "path": "QUICK_START.md",
+    "version": "1.2",
+    "contextFile": "ba050089-context.json",
+    "chunks": {
+      "2445c0": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792739141,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "13a8c8e4"
+        },
+        "hash": "548df549",
+        "messageId": "system_c60856f0-ceaf-11f1-9db6-9508a8babbdd",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:35:41 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "2445c0",
+        "hash": "ba35efed",
+        "encoded": "#%20Quick%20Start%20Guide%20-%20Self-Hosted%20Runner%20Setup",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "2445c0",
+        "hash": "cb82e488",
+        "encoded": "This%20is%20a%20condensed%20checklist%20for%20setting%20up%20your%20self-hosted%20GitHub%20Actions%20runner%20on%20GCP.%20For%20detailed%20explanations,%20see%20%5BSELF_HOSTED_SETUP.md%5D(SELF_HOSTED_SETUP.md).",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "2445c0",
+        "hash": "bbd5cb2f",
+        "encoded": "##%20Checklist",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "2445c0",
+        "hash": "abc86771",
+        "encoded": "###%20%E2%98%90%20Part%201:%20GCP%20Setup%20(10%20minutes)",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "2445c0",
+        "hash": "b126c304",
+        "encoded": "1.%20Go%20to%20%5BGoogle%20Cloud%20Console%5D(https://console.cloud.google.com)",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "2445c0",
+        "hash": "be3938e7",
+        "encoded": "2.%20Navigate%20to%20**Compute%20Engine%20%E2%86%92%20VM%20instances%20%E2%86%92%20CREATE%20INSTANCE**",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "2445c0",
+        "hash": "ba01af50",
+        "encoded": "3.%20Configure:",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "2445c0",
+        "hash": "5e062356",
+        "encoded": "-%20Name:%20%60github-runner-windows%60",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "2445c0",
+        "hash": "c5922e12",
+        "encoded": "-%20Machine%20type:%20%60e2-standard-2%60",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "2445c0",
+        "hash": "58c82950",
+        "encoded": "-%20Boot%20disk:%20**Windows%20Server%202022%20Datacenter**%20(50%20GB)",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "2445c0",
+        "hash": "1e728add",
+        "encoded": "4.%20Click%20**CREATE**",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "2445c0",
+        "hash": "b9e7cfec",
+        "encoded": "5.%20Once%20running,%20set%20Windows%20password%20(RDP%20dropdown%20%E2%86%92%20Set%20Windows%20password)",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "2445c0",
+        "hash": "d458e5d1",
+        "encoded": "6.%20**Save%20password%20somewhere%20safe!**",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "2445c0",
+        "hash": "9a58e3ff",
+        "encoded": "###%20%E2%98%90%20Part%202:%20Connect%20to%20VM%20(2%20minutes)",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "2445c0",
+        "hash": "b1965eae",
+        "encoded": "1.%20Download%20RDP%20file%20(RDP%20dropdown%20%E2%86%92%20Download%20RDP%20file)",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "2445c0",
+        "hash": "a1762903",
+        "encoded": "2.%20Open%20RDP%20file%20and%20connect%20with%20username/password%20from%20Part%201",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "2445c0",
+        "hash": "29b86072",
+        "encoded": "###%20%E2%98%90%20Part%203:%20Install%20Software%20on%20VM%20(10%20minutes)",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "2445c0",
+        "hash": "1c52d321",
+        "encoded": "**In%20Windows%20VM%20PowerShell%20(as%20Administrator):**",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "2445c0",
+        "hash": "3fbc03f7",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "2445c0",
+        "hash": "f8b20f10",
+        "encoded": "#%20Install%20Git",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "2445c0",
+        "hash": "34e06d14",
+        "encoded": "winget%20install%20--id%20Git.Git%20-e%20--source%20winget",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "2445c0",
+        "hash": "ca493bd2",
+        "encoded": "#%20Verify%20installations",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "2445c0",
+        "hash": "79b1f261",
+        "encoded": "git%20--version",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "2445c0",
+        "hash": "1f9191a1",
+        "encoded": "$PSVersionTable.PSVersion%20%20#%20Should%20be%205.1+",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "2445c0",
+        "hash": "1345d99c",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "2445c0",
+        "hash": "d5320c13",
+        "encoded": "###%20%E2%98%90%20Part%204:%20Register%20GitHub%20Runner%20(5%20minutes)",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "2445c0",
+        "hash": "e69ee034",
+        "encoded": "**On%20GitHub:**",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "2445c0",
+        "hash": "aef772dd",
+        "encoded": "1.%20Go%20to%20your%20repository%20%E2%86%92%20**Settings%20%E2%86%92%20Actions%20%E2%86%92%20Runners**",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "2445c0",
+        "hash": "76352cf0",
+        "encoded": "2.%20Click%20**New%20self-hosted%20runner**",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "2445c0",
+        "hash": "2ecb54cd",
+        "encoded": "3.%20Select%20**Windows**%20and%20**x64**",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "2445c0",
+        "hash": "9315a7e7",
+        "encoded": "4.%20**Keep%20this%20page%20open**",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "2445c0",
+        "hash": "38dae927",
+        "encoded": "**In%20Windows%20VM%20PowerShell%20(as%20Administrator):**",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "2445c0",
+        "hash": "652ae1bb",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "2445c0",
+        "hash": "305246a5",
+        "encoded": "#%20Create%20runner%20directory",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "2445c0",
+        "hash": "c7519cb2",
+        "encoded": "mkdir%20C:%5Cactions-runner",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "2445c0",
+        "hash": "2cccd1cb",
+        "encoded": "cd%20C:%5Cactions-runner",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "2445c0",
+        "hash": "6442083f",
+        "encoded": "#%20Download%20runner%20(copy%20command%20from%20GitHub%20page)",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "2445c0",
+        "hash": "c6d7fa61",
+        "encoded": "Invoke-WebRequest%20-Uri%20https://github.com/actions/runner/releases/download/v2.XXX.X/actions-runner-win-x64-2.XXX.X.zip%20-OutFile%20actions-runner.zip",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "2445c0",
+        "hash": "4d9473b0",
+        "encoded": "#%20Extract",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "2445c0",
+        "hash": "24db83a5",
+        "encoded": "Add-Type%20-AssemblyName%20System.IO.Compression.FileSystem",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "2445c0",
+        "hash": "510cbc10",
+        "encoded": "%5BSystem.IO.Compression.ZipFile%5D::ExtractToDirectory(%22$PWD%5Cactions-runner.zip%22,%20%22$PWD%22)",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "2445c0",
+        "hash": "654618da",
+        "encoded": "#%20Configure%20(copy%20command%20from%20GitHub%20page%20-%20includes%20your%20token)",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "2445c0",
+        "hash": "abe97ece",
+        "encoded": ".%5Cconfig.cmd%20--url%20https://github.com/YOUR_USERNAME/YOUR_REPO%20--token%20YOUR_TOKEN",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "2445c0",
+        "hash": "f23e37c8",
+        "encoded": "#%20When%20prompted:",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "2445c0",
+        "hash": "17173356",
+        "encoded": "#%20-%20Runner%20name:%20%5BPress%20Enter%20for%20default%5D",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "2445c0",
+        "hash": "8bde7b33",
+        "encoded": "#%20-%20Runner%20group:%20%5BPress%20Enter%20for%20default%5D",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "2445c0",
+        "hash": "30ba27fe",
+        "encoded": "#%20-%20Labels:%20Type%20%22windows%22%20and%20press%20Enter",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "2445c0",
+        "hash": "53ba783a",
+        "encoded": "#%20-%20Work%20folder:%20%5BPress%20Enter%20for%20default%5D",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "2445c0",
+        "hash": "810cc813",
+        "encoded": "#%20Install%20and%20start%20as%20service",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "2445c0",
+        "hash": "1f0fa9e3",
+        "encoded": ".%5Csvc.cmd%20install",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "2445c0",
+        "hash": "2d9fb5f5",
+        "encoded": ".%5Csvc.cmd%20start",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "2445c0",
+        "hash": "45f8512d",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "2445c0",
+        "hash": "236664b2",
+        "encoded": "###%20%E2%98%90%20Part%205:%20Verify%20Setup%20(2%20minutes)",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "2445c0",
+        "hash": "a625b2ea",
+        "encoded": "1.%20Go%20to%20GitHub:%20**Settings%20%E2%86%92%20Actions%20%E2%86%92%20Runners**",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "2445c0",
+        "hash": "fb7bfb4e",
+        "encoded": "2.%20Verify%20runner%20shows%20as%20**Idle**%20(green%20dot)",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "2445c0",
+        "hash": "1f7999cb",
+        "encoded": "3.%20Go%20to%20**Actions**%20tab%20%E2%86%92%20**Windows%20Image%20Factory%20Demo**",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "2445c0",
+        "hash": "ca74fda3",
+        "encoded": "4.%20Click%20**Run%20workflow%20%E2%86%92%20Run%20workflow**",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "2445c0",
+        "hash": "e839a4d7",
+        "encoded": "5.%20Watch%20it%20run%20on%20your%20self-hosted%20runner!",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "2445c0",
+        "hash": "d7466399",
+        "encoded": "##%20Common%20Issues",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "2445c0",
+        "hash": "934ae055",
+        "encoded": "%7C%20Issue%20%7C%20Solution%20%7C",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "2445c0",
+        "hash": "7dbec95a",
+        "encoded": "%7C-------%7C----------%7C",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "2445c0",
+        "hash": "fed9766d",
+        "encoded": "%7C%20Runner%20shows%20%22Offline%22%20%7C%20In%20VM:%20%60cd%20C:%5Cactions-runner%60%20then%20%60.%5Csvc.cmd%20start%60%20%7C",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "2445c0",
+        "hash": "c5ec2372",
+        "encoded": "%7C%20%22No%20runner%20matching%20labels%22%20%7C%20Verify%20labels%20in%20GitHub%20Settings%20exactly%20match%20%60%5Bself-hosted,%20windows%5D%60%20%7C",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "2445c0",
+        "hash": "64ad72e7",
+        "encoded": "%7C%20PowerShell%20script%20errors%20%7C%20Run:%20%60Set-ExecutionPolicy%20-ExecutionPolicy%20RemoteSigned%20-Scope%20CurrentUser%60%20%7C",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "2445c0",
+        "hash": "d4214f4b",
+        "encoded": "%7C%20VM%20too%20slow%20%7C%20Stop%20VM,%20change%20machine%20type%20to%20%60e2-standard-4%60,%20restart%20%7C",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "2445c0",
+        "hash": "d1934fb2",
+        "encoded": "##%20Stop%20VM%20When%20Not%20in%20Use",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "2445c0",
+        "hash": "ea41a21b",
+        "encoded": "**To%20save%20money:**",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "2445c0",
+        "hash": "c2c002be",
+        "encoded": "1.%20In%20GCP%20Console%20%E2%86%92%20**Compute%20Engine%20%E2%86%92%20VM%20instances**",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "2445c0",
+        "hash": "6e6fbb03",
+        "encoded": "2.%20Select%20your%20VM%20%E2%86%92%20Click%20**STOP**",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "2445c0",
+        "hash": "69425689",
+        "encoded": "3.%20To%20restart:%20**START/RESUME**",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "2445c0",
+        "hash": "fe8a44f7",
+        "encoded": "**Cost:**%20Running%2024/7%20%E2%89%88%20$50/month.%20Stopped%20%E2%89%88%20$2/month%20(storage%20only).",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "2445c0",
+        "hash": "dd345b82",
+        "encoded": "##%20Next%20Steps",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "2445c0",
+        "hash": "a75dc7df",
+        "encoded": "-%20%E2%9C%85%20Runner%20is%20configured%20and%20ready!",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "2445c0",
+        "hash": "40128935",
+        "encoded": "-%20%F0%9F%93%9A%20Read%20%5BREADME.md%5D(README.md)%20for%20project%20overview",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "2445c0",
+        "hash": "42ef5392",
+        "encoded": "-%20%F0%9F%94%A7%20Customize%20%5Bconfigs/device.yaml%5D(configs/device.yaml)%20for%20your%20needs",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "2445c0",
+        "hash": "41c04034",
+        "encoded": "-%20%F0%9F%93%9D%20Review%20%5BSELF_HOSTED_SETUP.md%5D(SELF_HOSTED_SETUP.md)%20for%20detailed%20explanations",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "2445c0",
+        "hash": "46c710ac",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "2445c0",
+        "hash": "99826151",
+        "encoded": "**Total%20Setup%20Time:**%20~30%20minutes",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "2445c0",
+        "hash": "8b2cd913",
+        "encoded": "**Need%20help?**%20Check%20%5BSELF_HOSTED_SETUP.md%5D(SELF_HOSTED_SETUP.md)%20for%20detailed%20troubleshooting.",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

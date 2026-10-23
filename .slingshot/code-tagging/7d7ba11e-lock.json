@@ -1,0 +1,1080 @@
+{
+  "README.md": {
+    "filename": "README.md",
+    "path": "README.md",
+    "version": "1.2",
+    "contextFile": "7d7ba11e-context.json",
+    "chunks": {
+      "344471": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792739140,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "13a8c8e4"
+        },
+        "hash": "d3a4e8a9",
+        "messageId": "system_c60856f0-ceaf-11f1-9db6-9508a8babbdd",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:35:40 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "344471",
+        "hash": "4e717e32",
+        "encoded": "#%20Windows%20Image%20Factory%20Demo",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "344471",
+        "hash": "08264c18",
+        "encoded": "%5B!%5BWindows%20Image%20Factory%20Demo%5D(https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/image-factory.yml/badge.svg)%5D(https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/image-factory.yml)",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "344471",
+        "hash": "ead23309",
+        "encoded": "A%20demonstration%20project%20for%20building%20Windows%20system%20images%20using%20GitHub%20Actions%20with%20self-hosted%20runners%20on%20Google%20Cloud%20Platform.",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "344471",
+        "hash": "94a4194d",
+        "encoded": "##%20Overview",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "344471",
+        "hash": "9f6394c8",
+        "encoded": "This%20project%20simulates%20a%20Windows%20image%20factory%20pipeline%20that%20validates%20configurations,%20builds%20system%20images,%20and%20generates%20deployment%20packages.%20It's%20designed%20to%20run%20on%20self-hosted%20Windows%20runners%20for%20enterprise%20environments.",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "344471",
+        "hash": "42acbd6a",
+        "encoded": "##%20Features",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "344471",
+        "hash": "5150428b",
+        "encoded": "-%20%E2%9C%85%20Configuration%20validation",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "344471",
+        "hash": "ce33a7d7",
+        "encoded": "-%20%E2%9C%85%20Automated%20image%20building%20simulation",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "344471",
+        "hash": "19181f7d",
+        "encoded": "-%20%E2%9C%85%20Artifact%20validation%20and%20packaging",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "344471",
+        "hash": "650feaf0",
+        "encoded": "-%20%E2%9C%85%20Tanium%20package%20generation",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "344471",
+        "hash": "e9e84fa4",
+        "encoded": "-%20%E2%9C%85%20Self-hosted%20runner%20support",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "344471",
+        "hash": "47f4a2eb",
+        "encoded": "-%20%E2%9C%85%20PowerShell-based%20automation",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "344471",
+        "hash": "fa82e30c",
+        "encoded": "##%20Project%20Structure",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "344471",
+        "hash": "aeb267a2",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "344471",
+        "hash": "76e9bf52",
+        "encoded": "image-factory-demo/",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "344471",
+        "hash": "3d0f8a16",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20.github/",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "344471",
+        "hash": "f6f82f8d",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20workflows/",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "344471",
+        "hash": "c5b40aab",
+        "encoded": "%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20image-factory.yml%20%20%20%20#%20GitHub%20Actions%20workflow%20(self-hosted)",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "344471",
+        "hash": "5f17d128",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20configs/",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "344471",
+        "hash": "cd5a175b",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20device.yaml%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Device%20configuration",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "344471",
+        "hash": "09f465b6",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20scripts/",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "344471",
+        "hash": "91c60310",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20validate-config.ps1%20%20%20%20%20%20#%20Config%20validation",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "344471",
+        "hash": "f9c11484",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20simulate-build.ps1%20%20%20%20%20%20%20#%20Image%20build%20simulation",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "344471",
+        "hash": "d5257871",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20validate-artifacts.ps1%20%20%20#%20Artifact%20validation",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "344471",
+        "hash": "ee94c89d",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20new-tanium-package.ps1%20%20%20#%20Tanium%20package%20generator",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "344471",
+        "hash": "3c698153",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20tests/",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "344471",
+        "hash": "47bbdf15",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20Test-Project.ps1%20%20%20%20%20%20%20%20%20#%20Project%20smoke%20tests",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "344471",
+        "hash": "f7598fb1",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20packer/",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "344471",
+        "hash": "aee1bc7a",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20windows.pkr.hcl%20%20%20%20%20%20%20%20%20%20#%20Packer%20template",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "344471",
+        "hash": "cc9f7186",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20variables.pkr.hcl.example%20#%20Packer%20variables",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "344471",
+        "hash": "7ebf55aa",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20artifacts/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Build%20outputs%20(generated)",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "344471",
+        "hash": "456d0c0b",
+        "encoded": "%E2%94%94%E2%94%80%E2%94%80%20SELF_HOSTED_SETUP.md%20%20%20%20%20%20%20%20#%20Self-hosted%20runner%20setup%20guide",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "344471",
+        "hash": "cd4430ef",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "344471",
+        "hash": "30930102",
+        "encoded": "##%20Quick%20Start",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "344471",
+        "hash": "1ab5125c",
+        "encoded": "###%20Prerequisites",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "344471",
+        "hash": "06d763ed",
+        "encoded": "-%20Google%20Cloud%20Platform%20account",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "344471",
+        "hash": "f8b22a7d",
+        "encoded": "-%20GitHub%20repository",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "344471",
+        "hash": "0659fdbb",
+        "encoded": "-%20Basic%20knowledge%20of%20PowerShell%20(helpful%20but%20not%20required)",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "344471",
+        "hash": "1634d5fe",
+        "encoded": "###%20Setup%20Steps",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "344471",
+        "hash": "0c11473b",
+        "encoded": "1.%20**Fork%20or%20clone%20this%20repository**",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "344471",
+        "hash": "0289fe8c",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "344471",
+        "hash": "cd4a0b43",
+        "encoded": "git%20clone%20https://github.com/YOUR_USERNAME/image-factory-demo.git",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "344471",
+        "hash": "b9e46378",
+        "encoded": "cd%20image-factory-demo",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "344471",
+        "hash": "4864eb05",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "344471",
+        "hash": "6724a28f",
+        "encoded": "2.%20**Set%20up%20your%20self-hosted%20runner**",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "344471",
+        "hash": "13c1f26f",
+        "encoded": "Follow%20the%20comprehensive%20guide:%20**%5BSELF_HOSTED_SETUP.md%5D(SELF_HOSTED_SETUP.md)**",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "344471",
+        "hash": "aa59a94e",
+        "encoded": "This%20guide%20covers:",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "344471",
+        "hash": "ef97b548",
+        "encoded": "-%20Creating%20a%20Windows%20VM%20in%20GCP",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "344471",
+        "hash": "4a97df7b",
+        "encoded": "-%20Installing%20required%20software",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "344471",
+        "hash": "032171aa",
+        "encoded": "-%20Registering%20the%20GitHub%20runner",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "344471",
+        "hash": "6b191b57",
+        "encoded": "-%20Testing%20your%20setup",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "344471",
+        "hash": "6ecc5a25",
+        "encoded": "3.%20**Push%20a%20change%20or%20run%20workflow%20manually**",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "344471",
+        "hash": "d8484db5",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "344471",
+        "hash": "d5f2ae70",
+        "encoded": "git%20add%20.",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "344471",
+        "hash": "3ed0e7e6",
+        "encoded": "git%20commit%20-m%20%22Initial%20setup%22",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "344471",
+        "hash": "5485b088",
+        "encoded": "git%20push%20origin%20main",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "344471",
+        "hash": "d2a4f350",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "344471",
+        "hash": "d4561f26",
+        "encoded": "Or%20use%20GitHub's%20UI:",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "344471",
+        "hash": "b1192494",
+        "encoded": "-%20Go%20to%20**Actions**%20tab",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "344471",
+        "hash": "091938fb",
+        "encoded": "-%20Select%20**Windows%20Image%20Factory%20Demo**",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "344471",
+        "hash": "83a27c5f",
+        "encoded": "-%20Click%20**Run%20workflow**",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "344471",
+        "hash": "0d6a9589",
+        "encoded": "##%20How%20It%20Works",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "344471",
+        "hash": "0d982215",
+        "encoded": "###%20Workflow%20Triggers",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "344471",
+        "hash": "91d3ac03",
+        "encoded": "The%20workflow%20runs%20automatically%20when:",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "344471",
+        "hash": "34edfc24",
+        "encoded": "-%20Changes%20are%20pushed%20to%20%60main%60%20branch",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "344471",
+        "hash": "055a0114",
+        "encoded": "-%20Pull%20requests%20are%20opened%20to%20%60main%60",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "344471",
+        "hash": "f9b8336d",
+        "encoded": "-%20Manually%20triggered%20via%20%60workflow_dispatch%60",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "344471",
+        "hash": "bc10ec0d",
+        "encoded": "###%20Workflow%20Steps",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "344471",
+        "hash": "55fd67a3",
+        "encoded": "1.%20**Checkout**%20-%20Clones%20the%20repository",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "344471",
+        "hash": "0b79ce93",
+        "encoded": "2.%20**Validate%20Configuration**%20-%20Checks%20%60configs/device.yaml%60%20for%20errors",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "344471",
+        "hash": "c7d69a28",
+        "encoded": "3.%20**Run%20Smoke%20Test**%20-%20Executes%20project%20tests",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "344471",
+        "hash": "cfb4e8aa",
+        "encoded": "4.%20**Simulate%20Image%20Build**%20-%20Simulates%20Windows%20image%20creation",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "344471",
+        "hash": "9b32190f",
+        "encoded": "5.%20**Validate%20Artifacts**%20-%20Verifies%20build%20outputs",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "344471",
+        "hash": "465349d4",
+        "encoded": "6.%20**Generate%20Tanium%20Package**%20-%20Creates%20deployment%20package",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "344471",
+        "hash": "b8c87ef1",
+        "encoded": "7.%20**Upload%20Artifacts**%20-%20Stores%20build%20outputs",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "344471",
+        "hash": "1d2fdca1",
+        "encoded": "##%20Configuration",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "344471",
+        "hash": "8b85330e",
+        "encoded": "###%20Device%20Configuration%20(%60configs/device.yaml%60)",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "344471",
+        "hash": "27bd1244",
+        "encoded": "Defines%20the%20target%20device%20specifications%20and%20software%20packages:",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "344471",
+        "hash": "c509af7b",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "344471",
+        "hash": "76d68b31",
+        "encoded": "device:",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "344471",
+        "hash": "b839f414",
+        "encoded": "model:%20%22Enterprise%20Desktop%22",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "344471",
+        "hash": "e3382b4c",
+        "encoded": "os_version:%20%22Windows%2011%20Enterprise%22",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "344471",
+        "hash": "1329818a",
+        "encoded": "drivers:",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "344471",
+        "hash": "2872f21c",
+        "encoded": "-%20elo-touchscreen",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "344471",
+        "hash": "c64765a7",
+        "encoded": "-%20barcode-scanner",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "344471",
+        "hash": "8cffb9ad",
+        "encoded": "applications:",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "344471",
+        "hash": "e20204bf",
+        "encoded": "-%20chrome",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "344471",
+        "hash": "e347c71d",
+        "encoded": "-%20adobe-reader",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "344471",
+        "hash": "c50f9948",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "344471",
+        "hash": "e043bb78",
+        "encoded": "###%20Runner%20Configuration",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "344471",
+        "hash": "557d378c",
+        "encoded": "The%20workflow%20is%20configured%20for%20self-hosted%20Windows%20runners%20with%20labels:",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "344471",
+        "hash": "5a201ebf",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "344471",
+        "hash": "15756db2",
+        "encoded": "runs-on:%20%5Bself-hosted,%20windows%5D",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "344471",
+        "hash": "a04f6dd5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "344471",
+        "hash": "433838c6",
+        "encoded": "##%20Development",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "344471",
+        "hash": "7781ff11",
+        "encoded": "###%20Running%20Scripts%20Locally",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "344471",
+        "hash": "500a1736",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "344471",
+        "hash": "ebba5a5b",
+        "encoded": "#%20Validate%20configuration",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "344471",
+        "hash": "0da9e2fb",
+        "encoded": ".%5Cscripts%5Cvalidate-config.ps1%20-ConfigPath%20.%5Cconfigs%5Cdevice.yaml",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "344471",
+        "hash": "4716958a",
+        "encoded": "#%20Run%20tests",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "344471",
+        "hash": "ad41d13c",
+        "encoded": ".%5Ctests%5CTest-Project.ps1",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "344471",
+        "hash": "af93705d",
+        "encoded": "#%20Simulate%20build",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "344471",
+        "hash": "0e0a9edc",
+        "encoded": ".%5Cscripts%5Csimulate-build.ps1%20-ConfigPath%20.%5Cconfigs%5Cdevice.yaml%20-ArtifactDirectory%20.%5Cartifacts",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "344471",
+        "hash": "f5522d99",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "344471",
+        "hash": "0523ca54",
+        "encoded": "###%20Adding%20New%20Applications",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "344471",
+        "hash": "19cd6a22",
+        "encoded": "1.%20Edit%20%60configs/device.yaml%60",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "344471",
+        "hash": "c5fae373",
+        "encoded": "2.%20Add%20application%20installer%20to%20%60apps/%60%20directory",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "344471",
+        "hash": "29f77881",
+        "encoded": "3.%20Update%20%60scripts/install-applications.ps1%60%20if%20custom%20logic%20needed",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "344471",
+        "hash": "c6adad7d",
+        "encoded": "###%20Adding%20New%20Drivers",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "344471",
+        "hash": "2e01ad75",
+        "encoded": "1.%20Place%20driver%20files%20in%20%60drivers/%3Cdriver-name%3E/%60",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "344471",
+        "hash": "bcaa2097",
+        "encoded": "2.%20Update%20%60configs/device.yaml%60",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "344471",
+        "hash": "1adc18fc",
+        "encoded": "3.%20Drivers%20are%20injected%20via%20%60scripts/inject-drivers-offline.ps1%60",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "344471",
+        "hash": "b680d2ed",
+        "encoded": "##%20Troubleshooting",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "344471",
+        "hash": "d2c5cdbb",
+        "encoded": "###%20Workflow%20Not%20Running",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "344471",
+        "hash": "5e62ea3e",
+        "encoded": "-%20Verify%20runner%20is%20online:%20**Settings%20%E2%86%92%20Actions%20%E2%86%92%20Runners**",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "344471",
+        "hash": "dc267ce4",
+        "encoded": "-%20Check%20runner%20labels%20match%20%60%5Bself-hosted,%20windows%5D%60",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "344471",
+        "hash": "1a3594e7",
+        "encoded": "-%20Ensure%20VM%20is%20running%20in%20GCP%20Console",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "344471",
+        "hash": "227b834a",
+        "encoded": "###%20Script%20Execution%20Errors",
+        "prevChunkIds": []
+      },
+      "161": {
+        "chunkId": "344471",
+        "hash": "3f36aff1",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "344471",
+        "hash": "72e21e25",
+        "encoded": "#%20Enable%20script%20execution",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "344471",
+        "hash": "8fa1eff7",
+        "encoded": "Set-ExecutionPolicy%20-ExecutionPolicy%20RemoteSigned%20-Scope%20CurrentUser",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "344471",
+        "hash": "a24bb7f5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "344471",
+        "hash": "82be9f15",
+        "encoded": "###%20Build%20Artifacts%20Missing",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "344471",
+        "hash": "29ba3e41",
+        "encoded": "-%20Check%20workflow%20logs%20in%20GitHub%20Actions%20tab",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "344471",
+        "hash": "fb8f6e5f",
+        "encoded": "-%20Verify%20%60artifacts/%60%20directory%20permissions%20on%20runner",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "344471",
+        "hash": "4db6bdf5",
+        "encoded": "-%20Ensure%20disk%20space%20is%20available%20on%20VM",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "344471",
+        "hash": "7029cc90",
+        "encoded": "##%20Cost%20Management",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "344471",
+        "hash": "99f3ed7d",
+        "encoded": "**GCP%20VM%20Costs:**",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "344471",
+        "hash": "0236beb8",
+        "encoded": "-%20Running%2024/7:%20~$50-100/month%20(depending%20on%20machine%20type)",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "344471",
+        "hash": "87c67947",
+        "encoded": "-%20Stopped%20VM:%20~$2/month%20(storage%20only)",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "344471",
+        "hash": "b571ef0f",
+        "encoded": "**Recommendation:**%20Stop%20your%20GCP%20VM%20when%20not%20actively%20running%20workflows.",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "344471",
+        "hash": "04c06f23",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "344471",
+        "hash": "e40681fc",
+        "encoded": "#%20Stop%20VM%20via%20gcloud%20CLI",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "344471",
+        "hash": "6355b5f8",
+        "encoded": "gcloud%20compute%20instances%20stop%20github-runner-windows%20--zone=us-central1-a",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "344471",
+        "hash": "8507ed96",
+        "encoded": "#%20Start%20VM",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "344471",
+        "hash": "20f632fe",
+        "encoded": "gcloud%20compute%20instances%20start%20github-runner-windows%20--zone=us-central1-a",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "344471",
+        "hash": "20018b99",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "344471",
+        "hash": "e63a1ff0",
+        "encoded": "##%20Security%20Considerations",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "344471",
+        "hash": "47829537",
+        "encoded": "-%20%E2%9C%85%20Runner%20uses%20least-privilege%20service%20account",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "344471",
+        "hash": "e32375ad",
+        "encoded": "-%20%E2%9C%85%20Workflow%20has%20read-only%20content%20permissions",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "344471",
+        "hash": "56edcc32",
+        "encoded": "-%20%E2%9C%85%20No%20secrets%20required%20for%20simulation%20mode",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "344471",
+        "hash": "90173feb",
+        "encoded": "-%20%E2%9A%A0%EF%B8%8F%20Restrict%20RDP%20access%20to%20trusted%20IP%20ranges%20only",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "344471",
+        "hash": "281dbd94",
+        "encoded": "-%20%E2%9A%A0%EF%B8%8F%20Regularly%20update%20Windows%20Server%20and%20runner%20software",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "344471",
+        "hash": "304f848d",
+        "encoded": "##%20Advanced%20Configuration",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "344471",
+        "hash": "ace49c62",
+        "encoded": "###%20Using%20Real%20Packer%20Builds",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "344471",
+        "hash": "0663fad5",
+        "encoded": "To%20build%20actual%20Windows%20images%20(not%20simulations):",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "344471",
+        "hash": "a38f62cd",
+        "encoded": "1.%20Install%20HashiCorp%20Packer%20on%20your%20runner",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "344471",
+        "hash": "75880518",
+        "encoded": "2.%20Configure%20Hyper-V%20or%20VMware%20on%20the%20VM",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "344471",
+        "hash": "4280a1c2",
+        "encoded": "3.%20Update%20workflow%20to%20use%20%60packer%20build%60%20instead%20of%20%60simulate-build.ps1%60",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "344471",
+        "hash": "089b287d",
+        "encoded": "See%20%5Bpacker/windows.pkr.hcl%5D(packer/windows.pkr.hcl)%20for%20template%20configuration.",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "344471",
+        "hash": "f1870a0d",
+        "encoded": "###%20Multi-Runner%20Setup",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "344471",
+        "hash": "e1c67370",
+        "encoded": "For%20parallel%20builds:",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "344471",
+        "hash": "d4f4b420",
+        "encoded": "1.%20Create%20additional%20GCP%20VMs",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "344471",
+        "hash": "835cb781",
+        "encoded": "2.%20Register%20each%20as%20a%20separate%20runner",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "344471",
+        "hash": "91dd452c",
+        "encoded": "3.%20GitHub%20automatically%20distributes%20jobs%20across%20available%20runners",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "344471",
+        "hash": "17fd2389",
+        "encoded": "##%20Documentation",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "344471",
+        "hash": "47586ec9",
+        "encoded": "-%20**%5BSelf-Hosted%20Setup%20Guide%5D(SELF_HOSTED_SETUP.md)**%20-%20Complete%20runner%20setup%20instructions",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "344471",
+        "hash": "e5d23396",
+        "encoded": "-%20**%5BGitHub%20Actions%20Docs%5D(https://docs.github.com/en/actions)**%20-%20Official%20GitHub%20Actions%20documentation",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "344471",
+        "hash": "e74552bb",
+        "encoded": "-%20**%5BGCP%20Compute%20Engine%5D(https://cloud.google.com/compute/docs)**%20-%20Google%20Cloud%20VM%20documentation",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "344471",
+        "hash": "886eda40",
+        "encoded": "##%20Contributing",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "344471",
+        "hash": "c483ab54",
+        "encoded": "Contributions%20are%20welcome!%20Please:",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "344471",
+        "hash": "fe06bda2",
+        "encoded": "1.%20Fork%20the%20repository",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "344471",
+        "hash": "3f058415",
+        "encoded": "2.%20Create%20a%20feature%20branch",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "344471",
+        "hash": "9396d57c",
+        "encoded": "3.%20Make%20your%20changes",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "344471",
+        "hash": "00315dba",
+        "encoded": "4.%20Submit%20a%20pull%20request",
+        "prevChunkIds": []
+      },
+      "231": {
+        "chunkId": "344471",
+        "hash": "611423da",
+        "encoded": "##%20License",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "344471",
+        "hash": "aace268f",
+        "encoded": "This%20project%20is%20provided%20as-is%20for%20demonstration%20purposes.",
+        "prevChunkIds": []
+      },
+      "235": {
+        "chunkId": "344471",
+        "hash": "6a4462d2",
+        "encoded": "##%20Support",
+        "prevChunkIds": []
+      },
+      "237": {
+        "chunkId": "344471",
+        "hash": "9dee2652",
+        "encoded": "For%20issues%20or%20questions:",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "344471",
+        "hash": "3cdc352c",
+        "encoded": "1.%20Check%20the%20**%5BTroubleshooting%5D(#troubleshooting)**%20section",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "344471",
+        "hash": "d2975578",
+        "encoded": "2.%20Review%20GitHub%20Actions%20logs",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "344471",
+        "hash": "ed8c68c0",
+        "encoded": "3.%20Check%20GCP%20VM%20logs%20in%20Cloud%20Console",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "344471",
+        "hash": "2b5c43ab",
+        "encoded": "4.%20Open%20an%20issue%20in%20this%20repository",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "344471",
+        "hash": "652b60d6",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "344471",
+        "hash": "e6373cd1",
+        "encoded": "**Ready%20to%20get%20started?%20Follow%20the%20%5BSelf-Hosted%20Setup%20Guide%5D(SELF_HOSTED_SETUP.md)%20now!**",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

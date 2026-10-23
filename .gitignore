@@ -1,0 +1,42 @@
+# Build outputs
+artifacts/
+*.log
+*.etl
+
+# Packer
+packer-build.log
+packer-debug.log
+*.backup
+*.bak
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Runner workspace (if testing locally)
+_work/
+_diag/
+
+# Sensitive data
+*.pfx
+*.p12
+*.key
+*.pem
+secrets/
+
+# Package manager
+node_modules/
+package-lock.json

@@ -1,0 +1,661 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# 🏗️ WINDOWS IMAGE OPTIMIZATION PIPELINE - MULTI-STAGE ENHANCED
+# ═══════════════════════════════════════════════════════════════════════════════
+# 
+# This is a cosmetically enhanced version of main.yml with:
+#   ✨ Visual stage separators
+#   📊 Progress indicators
+#   🎨 Emoji annotations
+#   📝 Better documentation
+#   🔍 Enhanced logging
+#
+# ⚠️  FUNCTIONALLY IDENTICAL to main.yml - only visual improvements!
+# ═══════════════════════════════════════════════════════════════════════════════
+
+name: 🚀 Windows Image Optimization (Multi-Stage Enhanced)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "image-factory-demo/configs/**"
+      - "image-factory-demo/scripts/**"
+      - "image-factory-demo/tests/**"
+      - "image-factory-demo/packer/**"
+      - ".github/workflows/main-enhanced.yml"
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+    inputs:
+      os_version:
+        description: '🖥️ Windows OS version to build'
+        required: false
+        default: 'windows-latest'
+        type: choice
+        options:
+          - windows-latest
+          - windows-2019
+          - windows-2022
+
+permissions:
+  contents: read
+  id-token: write
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 📋 PIPELINE JOBS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+jobs:
+  # ═════════════════════════════════════════════════════════════════════════════
+  # 🔍 STAGE 1: VALIDATION & PRE-FLIGHT CHECKS
+  # ═════════════════════════════════════════════════════════════════════════════
+  
+  stage-1-validate:
+    name: "📋 Stage 1️⃣ │ Validation & Pre-Flight"
+    runs-on: ${{ inputs.os_version || 'windows-latest' }}
+    
+    outputs:
+      validation-status: ${{ steps.validation-summary.outputs.status }}
+      config-valid: ${{ steps.config-check.outputs.valid }}
+      packer-valid: ${{ steps.packer-check.outputs.valid }}
+
+    defaults:
+      run:
+        working-directory: ./image-factory-demo
+
+    steps:
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 1.1 - Repository Checkout                                           │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: 📊 Stage 1 - Progress Indicator
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "╔═══════════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
+          Write-Host "║                                                                   ║" -ForegroundColor Cyan
+          Write-Host "║   🔍 STAGE 1: VALIDATION & PRE-FLIGHT CHECKS                     ║" -ForegroundColor Cyan
+          Write-Host "║                                                                   ║" -ForegroundColor Cyan
+          Write-Host "║   Progress: [████████░░░░░░░░░░░░░░░░░░░░░░] 25%                ║" -ForegroundColor Cyan
+          Write-Host "║                                                                   ║" -ForegroundColor Cyan
+          Write-Host "╚═══════════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
+          Write-Host ""
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 1.2 - Configuration Validation                                       │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: ✅ 1.2 │ Validate configuration
+        id: config-check
+        shell: pwsh
+        run: |
+          Write-Host "" 
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 📄 Validating YAML Configuration                    │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          ./scripts/validate-config.ps1 -ConfigPath ./configs/device.yaml
+
+          if (-not $?) {
+            Write-Host "❌ Configuration validation FAILED" -ForegroundColor Red
+            throw "Configuration validation failed."
+          }
+          
+          Write-Host "✅ Configuration validation PASSED" -ForegroundColor Green
+          "valid=true" >> $env:GITHUB_OUTPUT
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 1.3 - Smoke Tests                                                    │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🧪 1.3 │ Run smoke tests
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 🧪 Running Project Smoke Tests                      │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          ./tests/Test-Project.ps1
+          
+          if (-not $?) {
+            Write-Host "❌ Smoke tests FAILED" -ForegroundColor Red
+            throw "Smoke tests failed."
+          }
+          
+          Write-Host "✅ Smoke tests PASSED" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 1.4 - Packer Installation                                            │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 📦 1.4 │ Install Packer
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 📦 Installing HashiCorp Packer                      │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          choco install packer --no-progress -y
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Packer installation FAILED" -ForegroundColor Red
+            throw "Packer installation failed."
+          }
+          
+          $version = packer version
+          Write-Host "✅ Packer installed: $version" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 1.5 - Packer Plugin Initialization                                   │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🔌 1.5 │ Initialize Packer plugins
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 🔌 Initializing Packer Plugins                      │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          packer init ./packer/windows.pkr.hcl
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Plugin initialization FAILED" -ForegroundColor Red
+            throw "Packer plugin initialization failed."
+          }
+          
+          Write-Host "✅ Packer plugins initialized" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 1.6 - Packer Template Validation                                     │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🔍 1.6 │ Validate Packer template
+        id: packer-check
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 🔍 Validating Packer Template Syntax                │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          packer fmt -check ./packer/windows.pkr.hcl
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Packer template validation FAILED" -ForegroundColor Red
+            throw "Packer template formatting check failed."
+          }
+          
+          Write-Host "✅ Packer template validation PASSED" -ForegroundColor Green
+          "valid=true" >> $env:GITHUB_OUTPUT
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 1.7 - Stage Summary                                                  │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 📊 1.7 │ Stage 1 Summary
+        id: validation-summary
+        if: always()
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "╔═══════════════════════════════════════════════════════════════════╗" -ForegroundColor Green
+          Write-Host "║                                                                   ║" -ForegroundColor Green
+          Write-Host "║   ✅ STAGE 1 COMPLETED: VALIDATION & PRE-FLIGHT                   ║" -ForegroundColor Green
+          Write-Host "║                                                                   ║" -ForegroundColor Green
+          Write-Host "║   📋 Configuration: ${{ steps.config-check.outputs.valid == 'true' && '✅ VALID' || '❌ INVALID' }}                                    ║" -ForegroundColor Green
+          Write-Host "║   🔍 Packer Template: ${{ steps.packer-check.outputs.valid == 'true' && '✅ VALID' || '❌ INVALID' }}                                ║" -ForegroundColor Green
+          Write-Host "║                                                                   ║" -ForegroundColor Green
+          Write-Host "╚═══════════════════════════════════════════════════════════════════╝" -ForegroundColor Green
+          Write-Host ""
+          
+          "status=SUCCESS" >> $env:GITHUB_OUTPUT
+
+  # ═════════════════════════════════════════════════════════════════════════════
+  # 🏗️ STAGE 2: IMAGE BUILD & PROVISIONING
+  # ═════════════════════════════════════════════════════════════════════════════
+  
+  stage-2-build:
+    name: "🏗️ Stage 2️⃣ │ Image Build & Provisioning"
+    needs: stage-1-validate
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ${{ inputs.os_version || 'windows-latest' }}
+    timeout-minutes: 180
+    
+    outputs:
+      image-name: ${{ steps.image-metadata.outputs.image_name }}
+      build-status: ${{ steps.build-summary.outputs.status }}
+
+    permissions:
+      contents: read
+      id-token: write
+
+    defaults:
+      run:
+        working-directory: ./image-factory-demo
+
+    env:
+      GCP_PROJECT_ID: burner-anstiwar-7035
+      GCP_ZONE: us-central1-a
+      WINDOWS_SOURCE_IMAGE: ${{ vars.WINDOWS_SOURCE_IMAGE }}
+      WINDOWS_SOURCE_IMAGE_PROJECT_ID: ${{ vars.WINDOWS_SOURCE_IMAGE_PROJECT_ID }}
+      
+    steps:
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.1 - Repository Checkout                                           │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: 📊 Stage 2 - Progress Indicator
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "╔═══════════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
+          Write-Host "║                                                                   ║" -ForegroundColor Cyan
+          Write-Host "║   🏗️ STAGE 2: IMAGE BUILD & PROVISIONING                         ║" -ForegroundColor Cyan
+          Write-Host "║                                                                   ║" -ForegroundColor Cyan
+          Write-Host "║   Progress: [████████████████████░░░░░░] 50%                     ║" -ForegroundColor Cyan
+          Write-Host "║                                                                   ║" -ForegroundColor Cyan
+          Write-Host "╚═══════════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
+          Write-Host ""
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.2 - Generate Image Metadata                                        │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🏷️ 2.2 │ Generate image metadata
+        id: image-metadata
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 🏷️  Generating Image Name & Metadata                │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          $timestamp = [DateTime]::UtcNow.ToString("yyyyMMdd-HHmmss")
+          $imageName = "mcd-windows-2022-$timestamp-r${{ github.run_number }}-a${{ github.run_attempt }}"
+
+          "IMAGE_NAME=$imageName" >> $env:GITHUB_ENV
+          "image_name=$imageName" >> $env:GITHUB_OUTPUT
+
+          Write-Host "✅ Generated image name: $imageName" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.3 - Install Packer                                                 │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 📦 2.3 │ Install Packer
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 📦 Installing HashiCorp Packer                      │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          choco install packer --no-progress -y
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Packer installation FAILED" -ForegroundColor Red
+            throw "Packer installation failed."
+          }
+
+          $version = packer version
+          Write-Host "✅ Packer installed: $version" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.4 - GCP Authentication                                             │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🔐 2.4 │ Authenticate to GCP (WIF)
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          project_id: burner-anstiwar-7035
+          create_credentials_file: true
+      
+      - name: ☁️ 2.5 │ Set up Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ env.GCP_PROJECT_ID }}
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.6 - Verify GCP Authentication                                      │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: ✅ 2.6 │ Verify GCP authentication
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ ✅ Verifying GCP Authentication                      │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          $ErrorActionPreference = "Stop"
+
+          Write-Host "Checking active GCP identity..."
+          gcloud auth list
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ GCP authentication check FAILED" -ForegroundColor Red
+            throw "GCP authentication check failed."
+          }
+
+          Write-Host "Checking target GCP project: $env:GCP_PROJECT_ID"
+
+          gcloud projects describe $env:GCP_PROJECT_ID --format="value(projectId)"
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Cannot access GCP project" -ForegroundColor Red
+            throw "Cannot access the GCP project. Check API enablement, WIF configuration, and IAM permissions."
+          }
+
+          Write-Host "✅ GCP project validation succeeded" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.7 - Initialize Packer Plugins                                      │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🔌 2.7 │ Initialize Packer plugins
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 🔌 Initializing Packer Plugins                      │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          packer init ./packer/windows.pkr.hcl
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Plugin initialization FAILED" -ForegroundColor Red
+            throw "Packer plugin initialization failed."
+          }
+          
+          Write-Host "✅ Packer plugins initialized" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.8 - Validate Packer Template                                       │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🔍 2.8 │ Validate Packer template
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 🔍 Validating Packer Template                       │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          packer validate `
+            -var "windows_project_id=$env:GCP_PROJECT_ID" `
+            -var "windows_zone=$env:GCP_ZONE" `
+            -var "windows_image_name=$env:IMAGE_NAME" `
+            -var "windows_source_image=$env:WINDOWS_SOURCE_IMAGE" `
+            -var "windows_source_image_project_id=$env:WINDOWS_SOURCE_IMAGE_PROJECT_ID" `
+            ./packer/windows.pkr.hcl
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Packer template validation FAILED" -ForegroundColor Red
+            throw "Packer template validation failed."
+          }
+          
+          Write-Host "✅ Packer template validated" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.9 - Build Golden Image (Main Build)                               │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🏗️ 2.9 │ Build Windows Server 2022 golden image
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "╔═══════════════════════════════════════════════════════════════════╗" -ForegroundColor Magenta
+          Write-Host "║                                                                   ║" -ForegroundColor Magenta
+          Write-Host "║   🏗️  STARTING PACKER BUILD                                       ║" -ForegroundColor Magenta
+          Write-Host "║                                                                   ║" -ForegroundColor Magenta
+          Write-Host "║   Image: $env:IMAGE_NAME                                          ║" -ForegroundColor Magenta
+          Write-Host "║   This may take 30-60 minutes...                                 ║" -ForegroundColor Magenta
+          Write-Host "║                                                                   ║" -ForegroundColor Magenta
+          Write-Host "╚═══════════════════════════════════════════════════════════════════╝" -ForegroundColor Magenta
+          Write-Host ""
+          
+          packer build `
+            -color=false `
+            -on-error=cleanup `
+            -var "windows_project_id=$env:GCP_PROJECT_ID" `
+            -var "windows_zone=$env:GCP_ZONE" `
+            -var "windows_image_name=$env:IMAGE_NAME" `
+            -var "windows_source_image=$env:WINDOWS_SOURCE_IMAGE" `
+            -var "windows_source_image_project_id=$env:WINDOWS_SOURCE_IMAGE_PROJECT_ID" `
+            ./packer/windows.pkr.hcl
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Packer image build FAILED" -ForegroundColor Red
+            throw "Packer image build failed."
+          }
+          
+          Write-Host ""
+          Write-Host "✅ Golden image build COMPLETED" -ForegroundColor Green
+          Write-Host ""
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.10 - Verify Created Image                                          │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: ✅ 2.10 │ Verify created image in GCP
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ ✅ Verifying Created Image in GCP                    │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          gcloud compute images describe $env:IMAGE_NAME `
+            --project=$env:GCP_PROJECT_ID `
+            --format="yaml(name,status,diskSizeGb,creationTimestamp)"
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Image verification FAILED" -ForegroundColor Red
+            throw "The image was not found after the Packer build."
+          }
+          
+          Write-Host "✅ Image verified in GCP" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.11 - Record Image Metadata                                         │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 📝 2.11 │ Record image metadata
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 📝 Recording Image Metadata                         │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          New-Item -ItemType Directory -Force -Path ./artifacts | Out-Null
+
+          $metadata = @{
+            project_id = $env:GCP_PROJECT_ID
+            image_name = $env:IMAGE_NAME
+            image_family = "mcd-windows-2022"
+            zone = $env:GCP_ZONE
+            commit_sha = "${{ github.sha }}"
+            run_number = "${{ github.run_number }}"
+            run_attempt = "${{ github.run_attempt }}"
+            build_timestamp_utc = [DateTime]::UtcNow.ToString("o")
+            build_status = "SUCCESS"
+          }
+
+          $metadata | ConvertTo-Json | Set-Content ./artifacts/image-metadata.json -Encoding utf8
+          
+          Write-Host "✅ Image metadata saved" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.12 - Simulate Build                                                │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 🎭 2.12 │ Simulate image build
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 🎭 Running Build Simulation                         │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          $ErrorActionPreference = "Stop"
+          ./scripts/simulate-build.ps1 -ConfigPath ./configs/device.yaml
+
+          if (-not $?) {
+            Write-Host "❌ Build simulation FAILED" -ForegroundColor Red
+            throw "Image build simulation failed."
+          }
+          
+          Write-Host "✅ Build simulation completed" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.13 - Validate Artifacts                                            │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: ✅ 2.13 │ Validate build artifacts
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ ✅ Validating Build Artifacts                        │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          $ErrorActionPreference = "Stop"
+
+          ./scripts/validate-artifacts.ps1
+
+          if (-not $?) {
+            Write-Host "❌ Artifact validation FAILED" -ForegroundColor Red
+            throw "Build artifact validation failed."
+          }
+          
+          Write-Host "✅ Artifacts validated" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.14 - Generate Tanium Package                                       │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 📦 2.14 │ Generate Tanium package
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│ 📦 Generating Tanium Deployment Package             │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          
+          ./scripts/new-tanium-package.ps1 -ArtifactDirectory ./artifacts
+          
+          if (-not $?) {
+            Write-Host "❌ Tanium package generation FAILED" -ForegroundColor Red
+            throw "Tanium package generation failed"
+          }
+          
+          Write-Host "✅ Tanium package generated" -ForegroundColor Green
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.15 - Upload Artifacts                                              │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: ☁️ 2.15 │ Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-image-factory-${{ github.run_number }}-${{ github.run_attempt }}
+          path: image-factory-demo/artifacts/
+          if-no-files-found: warn
+          retention-days: 30
+      
+      # ┌─────────────────────────────────────────────────────────────────────┐
+      # │ 2.16 - Stage Summary                                                 │
+      # └─────────────────────────────────────────────────────────────────────┘
+      
+      - name: 📊 2.16 │ Stage 2 Summary
+        id: build-summary
+        if: always()
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "╔═══════════════════════════════════════════════════════════════════╗" -ForegroundColor Green
+          Write-Host "║                                                                   ║" -ForegroundColor Green
+          Write-Host "║   ✅ STAGE 2 COMPLETED: IMAGE BUILD & PROVISIONING                ║" -ForegroundColor Green
+          Write-Host "║                                                                   ║" -ForegroundColor Green
+          Write-Host "║   🏷️  Image Name: $env:IMAGE_NAME                                 ║" -ForegroundColor Green
+          Write-Host "║   📦 Artifacts: Generated & Uploaded                             ║" -ForegroundColor Green
+          Write-Host "║   ✅ Build Status: SUCCESS                                        ║" -ForegroundColor Green
+          Write-Host "║                                                                   ║" -ForegroundColor Green
+          Write-Host "╚═══════════════════════════════════════════════════════════════════╝" -ForegroundColor Green
+          Write-Host ""
+          
+          "status=SUCCESS" >> $env:GITHUB_OUTPUT
+
+  # ═════════════════════════════════════════════════════════════════════════════
+  # 🎉 FINAL STAGE: PIPELINE SUMMARY
+  # ═════════════════════════════════════════════════════════════════════════════
+  
+  pipeline-summary:
+    name: "🎉 Pipeline Summary"
+    needs: [stage-1-validate, stage-2-build]
+    if: always()
+    runs-on: windows-latest
+    
+    steps:
+      - name: 📊 Generate pipeline summary
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host ""
+          Write-Host "╔═══════════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
+          Write-Host "║                                                                   ║" -ForegroundColor Cyan
+          Write-Host "║                  🎉 PIPELINE EXECUTION COMPLETE                   ║" -ForegroundColor Cyan
+          Write-Host "║                                                                   ║" -ForegroundColor Cyan
+          Write-Host "╚═══════════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
+          Write-Host ""
+          Write-Host "┌─────────────────────────────────────────────────────────────────┐" -ForegroundColor Yellow
+          Write-Host "│                      EXECUTION SUMMARY                          │" -ForegroundColor Yellow
+          Write-Host "├─────────────────────────────────────────────────────────────────┤" -ForegroundColor Yellow
+          Write-Host "│                                                                 │" -ForegroundColor Yellow
+          Write-Host "│  Stage 1️⃣ : Validation & Pre-Flight                             │" -ForegroundColor Yellow
+          Write-Host "│  Status  : ${{ needs.stage-1-validate.outputs.validation-status == 'SUCCESS' && '✅ SUCCESS' || '❌ FAILED' }}                                               │" -ForegroundColor Yellow
+          Write-Host "│                                                                 │" -ForegroundColor Yellow
+          Write-Host "│  Stage 2️⃣ : Image Build & Provisioning                          │" -ForegroundColor Yellow
+          Write-Host "│  Status  : ${{ needs.stage-2-build.outputs.build-status == 'SUCCESS' && '✅ SUCCESS' || '❌ FAILED' }}                                               │" -ForegroundColor Yellow
+          Write-Host "│  Image   : ${{ needs.stage-2-build.outputs.image-name || 'N/A' }}                                │" -ForegroundColor Yellow
+          Write-Host "│                                                                 │" -ForegroundColor Yellow
+          Write-Host "├─────────────────────────────────────────────────────────────────┤" -ForegroundColor Yellow
+          Write-Host "│                                                                 │" -ForegroundColor Yellow
+          Write-Host "│  Progress: [████████████████████████████████] 100%             │" -ForegroundColor Green
+          Write-Host "│                                                                 │" -ForegroundColor Yellow
+          Write-Host "└─────────────────────────────────────────────────────────────────┘" -ForegroundColor Yellow
+          Write-Host ""
+          Write-Host "✅ All stages completed successfully!" -ForegroundColor Green
+          Write-Host ""

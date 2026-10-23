@@ -1,0 +1,52 @@
+name: Windows Image Factory Demo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'configs/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'packer/**'
+      - '.github/workflows/image-factory.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-simulate:
+    # Safe default: works on GitHub-hosted Windows runners; does not require Hyper-V.
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate configuration
+        shell: pwsh
+        run: ./scripts/validate-config.ps1 -ConfigPath ./configs/device.yaml
+
+      - name: Run project smoke test
+        shell: pwsh
+        run: ./tests/Test-Project.ps1
+
+      - name: Simulate image build
+        shell: pwsh
+        run: ./scripts/simulate-build.ps1 -ConfigPath ./configs/device.yaml -ArtifactDirectory ./artifacts
+
+      - name: Validate generated artifacts
+        shell: pwsh
+        run: ./scripts/validate-artifacts.ps1 -ArtifactDirectory ./artifacts
+
+      - name: Generate Tanium package simulation
+        shell: pwsh
+        run: ./scripts/new-tanium-package.ps1 -ArtifactDirectory ./artifacts
+
+      - name: Upload demo artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-factory-demo-${{ github.run_number }}
+          path: artifacts/
+          if-no-files-found: error

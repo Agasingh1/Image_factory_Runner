@@ -1,0 +1,240 @@
+{
+  ".gitignore": {
+    "filename": ".gitignore",
+    "path": ".gitignore",
+    "version": "1.2",
+    "contextFile": "b6459458-context.json",
+    "chunks": {
+      "f54b52": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792739505,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "d3f9f7c0"
+        },
+        "hash": "885f5a28",
+        "messageId": "system_eb28ed90-ceb0-11f1-9db6-9508a8babbdd",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:41:45 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "f54b52",
+        "hash": "78798986",
+        "encoded": "#%20Build%20outputs",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "f54b52",
+        "hash": "e98d9b3c",
+        "encoded": "artifacts/",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "f54b52",
+        "hash": "d7ccd7fb",
+        "encoded": "*.log",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "f54b52",
+        "hash": "3bf8eec2",
+        "encoded": "*.etl",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "f54b52",
+        "hash": "b7a14956",
+        "encoded": "#%20Packer",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "f54b52",
+        "hash": "f75508cc",
+        "encoded": "packer-build.log",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "f54b52",
+        "hash": "9e4fee53",
+        "encoded": "packer-debug.log",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "f54b52",
+        "hash": "cc83303c",
+        "encoded": "*.backup",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "f54b52",
+        "hash": "4c930764",
+        "encoded": "*.bak",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "f54b52",
+        "hash": "cca50d08",
+        "encoded": "#%20Windows",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "f54b52",
+        "hash": "7ef479f2",
+        "encoded": "Thumbs.db",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "f54b52",
+        "hash": "864a9288",
+        "encoded": "ehthumbs.db",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "f54b52",
+        "hash": "e4851fa4",
+        "encoded": "Desktop.ini",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "f54b52",
+        "hash": "c45a287b",
+        "encoded": "$RECYCLE.BIN/",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "f54b52",
+        "hash": "f031c1c2",
+        "encoded": "#%20IDE",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "f54b52",
+        "hash": "283bf964",
+        "encoded": ".vscode/",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "f54b52",
+        "hash": "900224a6",
+        "encoded": ".idea/",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "f54b52",
+        "hash": "978864b7",
+        "encoded": "*.swp",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "f54b52",
+        "hash": "13a4dc78",
+        "encoded": "*.swo",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "f54b52",
+        "hash": "6c92f8a5",
+        "encoded": "*~",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "f54b52",
+        "hash": "2cfb2235",
+        "encoded": "#%20Temporary%20files",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "f54b52",
+        "hash": "a06ca178",
+        "encoded": "*.tmp",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "f54b52",
+        "hash": "1a0a0084",
+        "encoded": "*.temp",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "f54b52",
+        "hash": "9cccbd14",
+        "encoded": "#%20Runner%20workspace%20(if%20testing%20locally)",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "f54b52",
+        "hash": "45ce8e3a",
+        "encoded": "_work/",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "f54b52",
+        "hash": "4545cc33",
+        "encoded": "_diag/",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "f54b52",
+        "hash": "af1f7ce7",
+        "encoded": "#%20Sensitive%20data",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "f54b52",
+        "hash": "d5c55e12",
+        "encoded": "*.pfx",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "f54b52",
+        "hash": "07cfb98a",
+        "encoded": "*.p12",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "f54b52",
+        "hash": "b46a6e67",
+        "encoded": "*.key",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "f54b52",
+        "hash": "50bc15c8",
+        "encoded": "*.pem",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "f54b52",
+        "hash": "24c4ff43",
+        "encoded": "secrets/",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "f54b52",
+        "hash": "dc2401f9",
+        "encoded": "#%20Package%20manager",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "f54b52",
+        "hash": "783c6a18",
+        "encoded": "node_modules/",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "f54b52",
+        "hash": "b799faf2",
+        "encoded": "package-lock.json",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

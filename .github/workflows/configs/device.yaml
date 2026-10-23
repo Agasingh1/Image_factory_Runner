@@ -1,0 +1,14 @@
+device: POS
+driver_version: v1
+drivers:
+  - elo
+  - scanner
+apps:
+  - pt
+  - ultravnc
+  - notepadplusplus
+registry:
+  autologin: false
+build:
+  mode: simulation
+  image_name: image-factory-demo

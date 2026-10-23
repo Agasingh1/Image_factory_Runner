@@ -1,0 +1,21 @@
+device: POS
+driver_version: v1
+drivers:
+  - elo
+  - scanner
+apps:
+  - pt
+  - ultravnc
+  - notepadplusplus
+registry:
+  autologin: false
+
+tanium:
+  enabled: true
+  install_mode: prepare_for_imaging
+  installer_filename: SetupClient.exe
+  install_directory: 'C:\Program Files (x86)\Tanium\Tanium Client'
+
+build:
+  mode: simulation
+  image_name: image-factory-demo

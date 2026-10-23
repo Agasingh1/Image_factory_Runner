@@ -1,0 +1,2490 @@
+{
+  "TROUBLESHOOTING.md": {
+    "filename": "TROUBLESHOOTING.md",
+    "path": "TROUBLESHOOTING.md",
+    "version": "1.2",
+    "contextFile": "0cefd0bf-context.json",
+    "chunks": {
+      "194640": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792739259,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "13a8c8e4"
+        },
+        "hash": "2575d6b2",
+        "messageId": "system_c60856f0-ceaf-11f1-9db6-9508a8babbdd",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:37:39 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "194640",
+        "hash": "21617e1c",
+        "encoded": "#%20Troubleshooting%20Guide",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "194640",
+        "hash": "245b4919",
+        "encoded": "Comprehensive%20solutions%20for%20common%20issues%20when%20setting%20up%20and%20running%20self-hosted%20GitHub%20Actions%20runners%20on%20GCP.",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "194640",
+        "hash": "e665c314",
+        "encoded": "##%20Table%20of%20Contents",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "194640",
+        "hash": "278fe9a2",
+        "encoded": "-%20%5BRunner%20Issues%5D(#runner-issues)",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "194640",
+        "hash": "6a778f71",
+        "encoded": "-%20%5BGCP%20VM%20Issues%5D(#gcp-vm-issues)",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "194640",
+        "hash": "57a86a5b",
+        "encoded": "-%20%5BWorkflow%20Issues%5D(#workflow-issues)",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "194640",
+        "hash": "1c1add94",
+        "encoded": "-%20%5BNetwork%20Issues%5D(#network-issues)",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "194640",
+        "hash": "ab099633",
+        "encoded": "-%20%5BPerformance%20Issues%5D(#performance-issues)",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "194640",
+        "hash": "95eecd06",
+        "encoded": "-%20%5BCost%20Issues%5D(#cost-issues)",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "194640",
+        "hash": "c7d2bd71",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "194640",
+        "hash": "90721fd5",
+        "encoded": "##%20Runner%20Issues",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "194640",
+        "hash": "6d2ca140",
+        "encoded": "###%20Runner%20Shows%20as%20%22Offline%22%20in%20GitHub",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "194640",
+        "hash": "5014f9f7",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "194640",
+        "hash": "4dd04e90",
+        "encoded": "-%20Green%20dot%20in%20GitHub%20Settings%20%E2%86%92%20Actions%20%E2%86%92%20Runners%20is%20gray%20or%20red",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "194640",
+        "hash": "c85d27cc",
+        "encoded": "-%20Jobs%20stay%20in%20%22Queued%22%20state%20indefinitely",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "194640",
+        "hash": "a69da309",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "194640",
+        "hash": "74fac43b",
+        "encoded": "1.%20**Check%20if%20VM%20is%20running:**",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "194640",
+        "hash": "2571345a",
+        "encoded": "-%20Go%20to%20GCP%20Console%20%E2%86%92%20Compute%20Engine%20%E2%86%92%20VM%20instances",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "194640",
+        "hash": "771dbb57",
+        "encoded": "-%20Verify%20status%20is%20green%20(Running)",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "194640",
+        "hash": "d35383c3",
+        "encoded": "-%20If%20stopped,%20click%20**START/RESUME**",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "194640",
+        "hash": "75d7c5d6",
+        "encoded": "2.%20**Restart%20runner%20service:**",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "194640",
+        "hash": "3092275c",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "194640",
+        "hash": "a30b89d9",
+        "encoded": "#%20RDP%20to%20VM,%20open%20PowerShell%20as%20Administrator",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "194640",
+        "hash": "b1f8d2c2",
+        "encoded": "cd%20C:%5Cactions-runner",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "194640",
+        "hash": "795b381b",
+        "encoded": ".%5Csvc.cmd%20status%20%20%20%20%20#%20Check%20current%20status",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "194640",
+        "hash": "40b41ead",
+        "encoded": ".%5Csvc.cmd%20stop%20%20%20%20%20%20%20#%20Stop%20service",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "194640",
+        "hash": "e51185c6",
+        "encoded": ".%5Csvc.cmd%20start%20%20%20%20%20%20#%20Start%20service",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "194640",
+        "hash": "465274ea",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "194640",
+        "hash": "aa46db24",
+        "encoded": "3.%20**Check%20service%20logs:**",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "194640",
+        "hash": "4e716e09",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "194640",
+        "hash": "60fbde89",
+        "encoded": "cd%20C:%5Cactions-runner%5C_diag",
+        "prevChunkIds": []
+      },
+      "42": {
+        "chunkId": "194640",
+        "hash": "7b7c27a4",
+        "encoded": "Get-Content%20-Path%20.%5CRunner_*.log%20-Tail%2050",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "194640",
+        "hash": "bac32708",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "194640",
+        "hash": "b25299f3",
+        "encoded": "4.%20**Verify%20network%20connectivity:**",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "194640",
+        "hash": "652ae1bb",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "194640",
+        "hash": "b30a9f5b",
+        "encoded": "Test-NetConnection%20-ComputerName%20github.com%20-Port%20443",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "194640",
+        "hash": "5afa0ae3",
+        "encoded": "Test-NetConnection%20-ComputerName%20api.github.com%20-Port%20443",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "194640",
+        "hash": "9aeea603",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "51": {
+        "chunkId": "194640",
+        "hash": "d1f7f5ce",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "194640",
+        "hash": "df558e8a",
+        "encoded": "###%20Runner%20Registration%20Fails",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "194640",
+        "hash": "0c969869",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "194640",
+        "hash": "047e1482",
+        "encoded": "-%20%60config.cmd%60%20returns%20error",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "194640",
+        "hash": "0fe3f3d5",
+        "encoded": "-%20%22Invalid%20token%22%20or%20%22Forbidden%22%20messages",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "194640",
+        "hash": "6b5bcb3d",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "194640",
+        "hash": "30f4db48",
+        "encoded": "1.%20**Generate%20a%20new%20token:**",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "194640",
+        "hash": "8edd7222",
+        "encoded": "-%20GitHub%20repo%20%E2%86%92%20Settings%20%E2%86%92%20Actions%20%E2%86%92%20Runners%20%E2%86%92%20New%20self-hosted%20runner",
+        "prevChunkIds": []
+      },
+      "63": {
+        "chunkId": "194640",
+        "hash": "a02aa703",
+        "encoded": "-%20Tokens%20expire%20after%201%20hour",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "194640",
+        "hash": "de3f2f64",
+        "encoded": "-%20Copy%20the%20new%20registration%20command",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "194640",
+        "hash": "bc7205da",
+        "encoded": "2.%20**Check%20repository%20permissions:**",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "194640",
+        "hash": "ec6ba8a8",
+        "encoded": "-%20Ensure%20you%20have%20admin%20access%20to%20the%20repository",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "194640",
+        "hash": "7cde7660",
+        "encoded": "-%20Personal%20repos:%20You%20should%20be%20the%20owner",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "194640",
+        "hash": "9308168b",
+        "encoded": "-%20Organization%20repos:%20You%20need%20admin%20role",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "194640",
+        "hash": "e71216df",
+        "encoded": "3.%20**Remove%20old%20registration:**",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "194640",
+        "hash": "cec7d308",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "194640",
+        "hash": "e1033b74",
+        "encoded": "cd%20C:%5Cactions-runner",
+        "prevChunkIds": []
+      },
+      "74": {
+        "chunkId": "194640",
+        "hash": "02b852af",
+        "encoded": ".%5Cconfig.cmd%20remove%20--token%20YOUR_OLD_TOKEN",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "194640",
+        "hash": "daae0d42",
+        "encoded": "#%20Then%20re-register%20with%20new%20token",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "194640",
+        "hash": "4c58992c",
+        "encoded": ".%5Cconfig.cmd%20--url%20https://github.com/YOUR_USERNAME/YOUR_REPO%20--token%20NEW_TOKEN",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "194640",
+        "hash": "8e9ac3d3",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "194640",
+        "hash": "fe6dbb16",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "194640",
+        "hash": "848db286",
+        "encoded": "###%20%22No%20Runner%20Matching%20Labels%22%20Error",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "194640",
+        "hash": "7bf342e6",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "194640",
+        "hash": "606865f0",
+        "encoded": "-%20Workflow%20shows:%20%22No%20runners%20matched%20the%20labels:%20self-hosted,%20windows%22",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "194640",
+        "hash": "82ea5500",
+        "encoded": "-%20Jobs%20stay%20queued",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "194640",
+        "hash": "586537f2",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "194640",
+        "hash": "b07da0ee",
+        "encoded": "1.%20**Verify%20runner%20labels:**",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "194640",
+        "hash": "b7309d93",
+        "encoded": "-%20GitHub%20repo%20%E2%86%92%20Settings%20%E2%86%92%20Actions%20%E2%86%92%20Runners",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "194640",
+        "hash": "afe346a9",
+        "encoded": "-%20Click%20your%20runner%20name",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "194640",
+        "hash": "c71580ad",
+        "encoded": "-%20Check%20labels%20match%20exactly:%20%60self-hosted%60,%20%60windows%60",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "194640",
+        "hash": "5775af9e",
+        "encoded": "2.%20**Update%20workflow%20file:**",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "194640",
+        "hash": "b4dc605a",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "194640",
+        "hash": "ef73175d",
+        "encoded": "#%20.github/workflows/image-factory.yml",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "194640",
+        "hash": "d8ce12d7",
+        "encoded": "runs-on:%20%5Bself-hosted,%20windows%5D%20%20#%20Must%20match%20runner%20labels",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "194640",
+        "hash": "0b932502",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "194640",
+        "hash": "1faf4417",
+        "encoded": "3.%20**Re-configure%20runner%20with%20correct%20labels:**",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "194640",
+        "hash": "9810e5e9",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "194640",
+        "hash": "25d5c61d",
+        "encoded": "cd%20C:%5Cactions-runner",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "194640",
+        "hash": "92735d85",
+        "encoded": ".%5Cconfig.cmd%20remove",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "194640",
+        "hash": "c7ec1983",
+        "encoded": ".%5Cconfig.cmd%20--url%20https://github.com/YOUR_USERNAME/YOUR_REPO%20--token%20YOUR_TOKEN",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "194640",
+        "hash": "e11ab40e",
+        "encoded": "#%20When%20prompted%20for%20labels,%20type:%20windows",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "194640",
+        "hash": "bc5b8f89",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "194640",
+        "hash": "6a4c20ab",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "194640",
+        "hash": "13f813e1",
+        "encoded": "###%20Runner%20Service%20Won't%20Start",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "194640",
+        "hash": "6d5f50cd",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "194640",
+        "hash": "ebc93cf9",
+        "encoded": "-%20%60svc.cmd%20start%60%20returns%20error",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "194640",
+        "hash": "5bf38552",
+        "encoded": "-%20Event%20Viewer%20shows%20service%20startup%20failures",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "194640",
+        "hash": "64711032",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "194640",
+        "hash": "8832ca98",
+        "encoded": "1.%20**Check%20Windows%20Event%20Viewer:**",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "194640",
+        "hash": "6953bb60",
+        "encoded": "-%20Press%20%60Win%20+%20X%60%20%E2%86%92%20Event%20Viewer",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "194640",
+        "hash": "a236abcb",
+        "encoded": "-%20Windows%20Logs%20%E2%86%92%20Application",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "194640",
+        "hash": "195eaba7",
+        "encoded": "-%20Look%20for%20errors%20from%20%22actions.runner%22%20source",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "194640",
+        "hash": "2e7095ae",
+        "encoded": "2.%20**Verify%20service%20account%20permissions:**",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "194640",
+        "hash": "0071e14b",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "194640",
+        "hash": "aaca345f",
+        "encoded": "#%20Check%20if%20service%20is%20installed",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "194640",
+        "hash": "ae55a237",
+        "encoded": "Get-Service%20%7C%20Where-Object%20%7B$_.Name%20-like%20%22*actions.runner*%22%7D",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "194640",
+        "hash": "ceebbd1a",
+        "encoded": "#%20Reinstall%20service",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "194640",
+        "hash": "13b674af",
+        "encoded": "cd%20C:%5Cactions-runner",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "194640",
+        "hash": "2438a2de",
+        "encoded": ".%5Csvc.cmd%20uninstall",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "194640",
+        "hash": "ba2754ea",
+        "encoded": ".%5Csvc.cmd%20install",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "194640",
+        "hash": "aaf7e0ab",
+        "encoded": ".%5Csvc.cmd%20start",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "194640",
+        "hash": "262a6d47",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "194640",
+        "hash": "a544609d",
+        "encoded": "3.%20**Run%20runner%20interactively%20for%20debugging:**",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "194640",
+        "hash": "a1ea5e1a",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "194640",
+        "hash": "111868d0",
+        "encoded": "cd%20C:%5Cactions-runner",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "194640",
+        "hash": "d0c6ee56",
+        "encoded": ".%5Crun.cmd%20%20#%20Run%20in%20foreground%20to%20see%20errors",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "194640",
+        "hash": "1e477eab",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "194640",
+        "hash": "d832fdda",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "194640",
+        "hash": "bc7c9d8c",
+        "encoded": "##%20GCP%20VM%20Issues",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "194640",
+        "hash": "a2f443d4",
+        "encoded": "###%20Cannot%20RDP%20to%20VM",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "194640",
+        "hash": "29ef5cf7",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "194640",
+        "hash": "e281d78b",
+        "encoded": "-%20RDP%20connection%20times%20out",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "194640",
+        "hash": "130b8546",
+        "encoded": "-%20%22Remote%20Desktop%20can't%20connect%20to%20the%20remote%20computer%22",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "194640",
+        "hash": "18951e38",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "194640",
+        "hash": "a2f319cb",
+        "encoded": "1.%20**Verify%20VM%20is%20running:**",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "194640",
+        "hash": "0450330e",
+        "encoded": "-%20GCP%20Console%20%E2%86%92%20Compute%20Engine%20%E2%86%92%20VM%20instances",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "194640",
+        "hash": "e9b6a14e",
+        "encoded": "-%20Status%20should%20be%20green%20checkmark",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "194640",
+        "hash": "c729315c",
+        "encoded": "2.%20**Check%20firewall%20rules:**",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "194640",
+        "hash": "312fabbf",
+        "encoded": "-%20GCP%20Console%20%E2%86%92%20VPC%20Network%20%E2%86%92%20Firewall",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "194640",
+        "hash": "c4a09b41",
+        "encoded": "-%20Ensure%20rule%20exists%20allowing%20TCP%20port%203389",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "194640",
+        "hash": "fb1ef0cd",
+        "encoded": "-%20Default%20rule:%20%60default-allow-rdp%60",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "194640",
+        "hash": "297f6357",
+        "encoded": "3.%20**Verify%20external%20IP:**",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "194640",
+        "hash": "7bd9922e",
+        "encoded": "-%20VM%20must%20have%20an%20external%20IP%20address",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "194640",
+        "hash": "bc9d55eb",
+        "encoded": "-%20If%20missing,%20stop%20VM%20%E2%86%92%20Edit%20%E2%86%92%20Network%20%E2%86%92%20External%20IP%20%E2%86%92%20Ephemeral",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "194640",
+        "hash": "a03b70c7",
+        "encoded": "4.%20**Reset%20Windows%20password:**",
+        "prevChunkIds": []
+      },
+      "167": {
+        "chunkId": "194640",
+        "hash": "706fe751",
+        "encoded": "-%20VM%20instances%20%E2%86%92%20RDP%20dropdown%20%E2%86%92%20Set%20Windows%20password",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "194640",
+        "hash": "7d0e713c",
+        "encoded": "-%20Try%20connecting%20with%20new%20password",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "194640",
+        "hash": "ac9f774c",
+        "encoded": "5.%20**Use%20GCP%20Console%20SSH%20alternative:**",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "194640",
+        "hash": "d0d9316b",
+        "encoded": "-%20Not%20available%20for%20Windows,%20but%20you%20can:",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "194640",
+        "hash": "2a11512a",
+        "encoded": "-%20VM%20instances%20%E2%86%92%20Click%20VM%20name%20%E2%86%92%20Remote%20access%20%E2%86%92%20View%20gcloud%20command",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "194640",
+        "hash": "df792804",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "194640",
+        "hash": "c5d8f7e5",
+        "encoded": "###%20VM%20Runs%20Out%20of%20Disk%20Space",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "194640",
+        "hash": "4b9da9ed",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "194640",
+        "hash": "05c96505",
+        "encoded": "-%20Workflow%20fails%20with%20%22No%20space%20left%20on%20device%22",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "194640",
+        "hash": "5583b98b",
+        "encoded": "-%20Runner%20logs%20show%20disk%20errors",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "194640",
+        "hash": "7f1da238",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "194640",
+        "hash": "096e4cea",
+        "encoded": "1.%20**Check%20disk%20usage:**",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "194640",
+        "hash": "f8e0cba2",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "194640",
+        "hash": "0b41ebcd",
+        "encoded": "Get-PSDrive%20C%20%7C%20Select-Object%20Used,Free",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "194640",
+        "hash": "01a8494f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "194640",
+        "hash": "316540f1",
+        "encoded": "2.%20**Clean%20up%20runner%20workspace:**",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "194640",
+        "hash": "4299d728",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "194640",
+        "hash": "df1c8fc8",
+        "encoded": "cd%20C:%5Cactions-runner%5C_work",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "194640",
+        "hash": "6c0f82a9",
+        "encoded": "#%20Delete%20old%20build%20directories",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "194640",
+        "hash": "205ca73b",
+        "encoded": "Get-ChildItem%20-Directory%20%7C%20Where-Object%20%7B$_.Name%20-match%20'%5Cd+'%7D%20%7C%20Remove-Item%20-Recurse%20-Force",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "194640",
+        "hash": "cf0ca1be",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "194640",
+        "hash": "017cbbee",
+        "encoded": "3.%20**Increase%20disk%20size:**",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "194640",
+        "hash": "bb5cef01",
+        "encoded": "-%20GCP%20Console%20%E2%86%92%20Compute%20Engine%20%E2%86%92%20Disks",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "194640",
+        "hash": "b63edc8a",
+        "encoded": "-%20Select%20boot%20disk%20%E2%86%92%20EDIT%20%E2%86%92%20Increase%20size",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "194640",
+        "hash": "4b534f29",
+        "encoded": "-%20After%20increase,%20RDP%20to%20VM%20and%20extend%20partition:",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "194640",
+        "hash": "3c89aeae",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "194640",
+        "hash": "9b6cae8b",
+        "encoded": "#%20Open%20Disk%20Management",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "194640",
+        "hash": "2fa574d5",
+        "encoded": "diskmgmt.msc",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "194640",
+        "hash": "f220e2a4",
+        "encoded": "#%20Right-click%20C:%20drive%20%E2%86%92%20Extend%20Volume",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "194640",
+        "hash": "a422f964",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "194640",
+        "hash": "522b3585",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "194640",
+        "hash": "14ba3780",
+        "encoded": "###%20VM%20Performance%20is%20Slow",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "194640",
+        "hash": "9908a4ef",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "211": {
+        "chunkId": "194640",
+        "hash": "91db89eb",
+        "encoded": "-%20Workflows%20take%205-10+%20minutes",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "194640",
+        "hash": "e68e4a17",
+        "encoded": "-%20RDP%20is%20laggy",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "194640",
+        "hash": "f3d1083f",
+        "encoded": "-%20High%20CPU/memory%20usage",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "194640",
+        "hash": "022152ed",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "217": {
+        "chunkId": "194640",
+        "hash": "fb00c54b",
+        "encoded": "1.%20**Check%20resource%20usage:**",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "194640",
+        "hash": "47c32b2a",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "219": {
+        "chunkId": "194640",
+        "hash": "809d43b6",
+        "encoded": "#%20Open%20Task%20Manager",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "194640",
+        "hash": "ca460c74",
+        "encoded": "taskmgr",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "194640",
+        "hash": "35f70813",
+        "encoded": "#%20Or%20use%20PowerShell",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "194640",
+        "hash": "9c4ce6fe",
+        "encoded": "Get-Process%20%7C%20Sort-Object%20CPU%20-Descending%20%7C%20Select-Object%20-First%2010",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "194640",
+        "hash": "17c8baf3",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "225": {
+        "chunkId": "194640",
+        "hash": "745ac2b2",
+        "encoded": "2.%20**Upgrade%20machine%20type:**",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "194640",
+        "hash": "6cae0198",
+        "encoded": "-%20Stop%20VM%20in%20GCP%20Console",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "194640",
+        "hash": "65f796aa",
+        "encoded": "-%20Click%20EDIT",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "194640",
+        "hash": "a48a5374",
+        "encoded": "-%20Machine%20type%20%E2%86%92%20Select%20%60e2-standard-4%60%20(4%20vCPUs,%2016%20GB)",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "194640",
+        "hash": "ac2819a8",
+        "encoded": "-%20Click%20SAVE",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "194640",
+        "hash": "ca8ba706",
+        "encoded": "-%20Start%20VM",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "194640",
+        "hash": "bbdf2a9e",
+        "encoded": "3.%20**Optimize%20Windows:**",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "194640",
+        "hash": "5a5e7cf1",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "194640",
+        "hash": "a5635426",
+        "encoded": "#%20Disable%20Windows%20Search%20indexing%20on%20C:",
+        "prevChunkIds": []
+      },
+      "235": {
+        "chunkId": "194640",
+        "hash": "990f742d",
+        "encoded": "Set-Service%20-Name%20%22WSearch%22%20-StartupType%20Disabled",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "194640",
+        "hash": "b4665d80",
+        "encoded": "Stop-Service%20-Name%20%22WSearch%22",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "194640",
+        "hash": "80604aac",
+        "encoded": "#%20Disable%20unnecessary%20services",
+        "prevChunkIds": []
+      },
+      "239": {
+        "chunkId": "194640",
+        "hash": "df7c7483",
+        "encoded": "Set-Service%20-Name%20%22SysMain%22%20-StartupType%20Disabled%20%20#%20Superfetch",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "194640",
+        "hash": "9c92faa4",
+        "encoded": "Stop-Service%20-Name%20%22SysMain%22",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "194640",
+        "hash": "57c4acd8",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "194640",
+        "hash": "3b5eb997",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "194640",
+        "hash": "90acc3ad",
+        "encoded": "##%20Workflow%20Issues",
+        "prevChunkIds": []
+      },
+      "247": {
+        "chunkId": "194640",
+        "hash": "134eb407",
+        "encoded": "###%20PowerShell%20Scripts%20Fail%20to%20Execute",
+        "prevChunkIds": []
+      },
+      "249": {
+        "chunkId": "194640",
+        "hash": "a739a66c",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "250": {
+        "chunkId": "194640",
+        "hash": "4d053366",
+        "encoded": "-%20Workflow%20shows:%20%22Cannot%20be%20loaded%20because%20running%20scripts%20is%20disabled%22",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "194640",
+        "hash": "3cb9fdca",
+        "encoded": "-%20Exit%20code%201%20from%20PowerShell%20steps",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "194640",
+        "hash": "bae59364",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "194640",
+        "hash": "d68746e4",
+        "encoded": "1.%20**Set%20execution%20policy%20on%20runner:**",
+        "prevChunkIds": []
+      },
+      "256": {
+        "chunkId": "194640",
+        "hash": "c3f208f1",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "194640",
+        "hash": "7624db12",
+        "encoded": "#%20RDP%20to%20VM,%20PowerShell%20as%20Administrator",
+        "prevChunkIds": []
+      },
+      "258": {
+        "chunkId": "194640",
+        "hash": "d740beff",
+        "encoded": "Set-ExecutionPolicy%20-ExecutionPolicy%20RemoteSigned%20-Scope%20LocalMachine",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "194640",
+        "hash": "8b8f12e3",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "194640",
+        "hash": "93dc0607",
+        "encoded": "2.%20**Add%20execution%20policy%20to%20workflow:**",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "194640",
+        "hash": "2dcb62a0",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "194640",
+        "hash": "36350be4",
+        "encoded": "-%20name:%20Validate%20configuration",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "194640",
+        "hash": "bcf607bb",
+        "encoded": "shell:%20pwsh",
+        "prevChunkIds": []
+      },
+      "265": {
+        "chunkId": "194640",
+        "hash": "6423f1f7",
+        "encoded": "run:%20%7C",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "194640",
+        "hash": "69eeff47",
+        "encoded": "Set-ExecutionPolicy%20-ExecutionPolicy%20Bypass%20-Scope%20Process",
+        "prevChunkIds": []
+      },
+      "267": {
+        "chunkId": "194640",
+        "hash": "68b542bd",
+        "encoded": "./scripts/validate-config.ps1%20-ConfigPath%20./configs/device.yaml",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "194640",
+        "hash": "86fe91be",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "270": {
+        "chunkId": "194640",
+        "hash": "c20220b8",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "194640",
+        "hash": "390fd708",
+        "encoded": "###%20Git%20Checkout%20Fails",
+        "prevChunkIds": []
+      },
+      "274": {
+        "chunkId": "194640",
+        "hash": "370bee55",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "275": {
+        "chunkId": "194640",
+        "hash": "390ec6c9",
+        "encoded": "-%20Workflow%20fails%20at%20%22Checkout%22%20step",
+        "prevChunkIds": []
+      },
+      "276": {
+        "chunkId": "194640",
+        "hash": "0ba5782b",
+        "encoded": "-%20%22fatal:%20could%20not%20read%20Username%20for%20'https://github.com'%22",
+        "prevChunkIds": []
+      },
+      "278": {
+        "chunkId": "194640",
+        "hash": "c1b959af",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "194640",
+        "hash": "c57c9207",
+        "encoded": "1.%20**Verify%20Git%20is%20installed:**",
+        "prevChunkIds": []
+      },
+      "281": {
+        "chunkId": "194640",
+        "hash": "858e5a60",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "282": {
+        "chunkId": "194640",
+        "hash": "3e65faee",
+        "encoded": "git%20--version",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "194640",
+        "hash": "79d68ac2",
+        "encoded": "#%20If%20not%20found,%20install:",
+        "prevChunkIds": []
+      },
+      "284": {
+        "chunkId": "194640",
+        "hash": "2f5d4825",
+        "encoded": "winget%20install%20--id%20Git.Git%20-e%20--source%20winget",
+        "prevChunkIds": []
+      },
+      "285": {
+        "chunkId": "194640",
+        "hash": "49992ac4",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "287": {
+        "chunkId": "194640",
+        "hash": "4f6a1309",
+        "encoded": "2.%20**Check%20GitHub%20authentication:**",
+        "prevChunkIds": []
+      },
+      "288": {
+        "chunkId": "194640",
+        "hash": "1da55c9c",
+        "encoded": "-%20For%20public%20repos:%20No%20auth%20required",
+        "prevChunkIds": []
+      },
+      "289": {
+        "chunkId": "194640",
+        "hash": "4fdfaf76",
+        "encoded": "-%20For%20private%20repos:%20Configure%20GitHub%20token",
+        "prevChunkIds": []
+      },
+      "290": {
+        "chunkId": "194640",
+        "hash": "a7d5689e",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "194640",
+        "hash": "32682b11",
+        "encoded": "-%20name:%20Checkout",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "194640",
+        "hash": "defc428b",
+        "encoded": "uses:%20actions/checkout@v4",
+        "prevChunkIds": []
+      },
+      "293": {
+        "chunkId": "194640",
+        "hash": "e2b2aa1e",
+        "encoded": "with:",
+        "prevChunkIds": []
+      },
+      "294": {
+        "chunkId": "194640",
+        "hash": "fb95b77e",
+        "encoded": "token:%20$%7B%7B%20secrets.GITHUB_TOKEN%20%7D%7D%20%20#%20Automatic",
+        "prevChunkIds": []
+      },
+      "295": {
+        "chunkId": "194640",
+        "hash": "756bebe1",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "297": {
+        "chunkId": "194640",
+        "hash": "a09debbe",
+        "encoded": "3.%20**Clear%20Git%20credentials:**",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "194640",
+        "hash": "45e2bf18",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "299": {
+        "chunkId": "194640",
+        "hash": "4666cff3",
+        "encoded": "git%20config%20--global%20--unset%20credential.helper",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "194640",
+        "hash": "cf074648",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "194640",
+        "hash": "2c3b2036",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "304": {
+        "chunkId": "194640",
+        "hash": "7ef2d317",
+        "encoded": "###%20Artifacts%20Upload%20Fails",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "194640",
+        "hash": "6390ce28",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "194640",
+        "hash": "61fd3906",
+        "encoded": "-%20Workflow%20fails%20at%20%22Upload%20demo%20artifacts%22%20step",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "194640",
+        "hash": "d842ff92",
+        "encoded": "-%20%22No%20files%20were%20found%20with%20the%20provided%20path%22",
+        "prevChunkIds": []
+      },
+      "310": {
+        "chunkId": "194640",
+        "hash": "9bf915ff",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "194640",
+        "hash": "14c281c7",
+        "encoded": "1.%20**Verify%20artifacts%20exist:**",
+        "prevChunkIds": []
+      },
+      "313": {
+        "chunkId": "194640",
+        "hash": "35a0acc6",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "314": {
+        "chunkId": "194640",
+        "hash": "a1d56e4a",
+        "encoded": "-%20name:%20Debug%20artifacts",
+        "prevChunkIds": []
+      },
+      "315": {
+        "chunkId": "194640",
+        "hash": "018f93aa",
+        "encoded": "shell:%20pwsh",
+        "prevChunkIds": []
+      },
+      "316": {
+        "chunkId": "194640",
+        "hash": "b5db88f6",
+        "encoded": "run:%20%7C",
+        "prevChunkIds": []
+      },
+      "317": {
+        "chunkId": "194640",
+        "hash": "db7df5dd",
+        "encoded": "Get-ChildItem%20-Path%20./artifacts%20-Recurse",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "194640",
+        "hash": "b71bac29",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "320": {
+        "chunkId": "194640",
+        "hash": "f746eca7",
+        "encoded": "2.%20**Check%20artifact%20path%20in%20workflow:**",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "194640",
+        "hash": "41e01d84",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "322": {
+        "chunkId": "194640",
+        "hash": "caea274f",
+        "encoded": "-%20name:%20Upload%20demo%20artifacts",
+        "prevChunkIds": []
+      },
+      "323": {
+        "chunkId": "194640",
+        "hash": "d313ee1d",
+        "encoded": "uses:%20actions/upload-artifact@v4",
+        "prevChunkIds": []
+      },
+      "324": {
+        "chunkId": "194640",
+        "hash": "617f7873",
+        "encoded": "with:",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "194640",
+        "hash": "2cb5770e",
+        "encoded": "name:%20image-factory-demo-$%7B%7B%20github.run_number%20%7D%7D",
+        "prevChunkIds": []
+      },
+      "326": {
+        "chunkId": "194640",
+        "hash": "2e4fe915",
+        "encoded": "path:%20artifacts/%20%20%20%20%20%20%20%20%20%20#%20Ensure%20this%20matches%20output%20directory",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "194640",
+        "hash": "0616ecac",
+        "encoded": "if-no-files-found:%20warn%20%20%20#%20Change%20to%20'warn'%20for%20debugging",
+        "prevChunkIds": []
+      },
+      "328": {
+        "chunkId": "194640",
+        "hash": "708f9399",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "194640",
+        "hash": "6c270758",
+        "encoded": "3.%20**Verify%20directory%20permissions:**",
+        "prevChunkIds": []
+      },
+      "331": {
+        "chunkId": "194640",
+        "hash": "df05489e",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "332": {
+        "chunkId": "194640",
+        "hash": "28fd3951",
+        "encoded": "icacls%20C:%5Cactions-runner%5C_work%5Cimage-factory-demo%5Cartifacts",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "194640",
+        "hash": "5858474a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "335": {
+        "chunkId": "194640",
+        "hash": "c8bd131c",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "337": {
+        "chunkId": "194640",
+        "hash": "8e16b0ee",
+        "encoded": "##%20Network%20Issues",
+        "prevChunkIds": []
+      },
+      "339": {
+        "chunkId": "194640",
+        "hash": "f037c45d",
+        "encoded": "###%20Cannot%20Reach%20GitHub%20from%20VM",
+        "prevChunkIds": []
+      },
+      "341": {
+        "chunkId": "194640",
+        "hash": "3f2ee59e",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "342": {
+        "chunkId": "194640",
+        "hash": "21233926",
+        "encoded": "-%20Runner%20can't%20connect%20to%20GitHub",
+        "prevChunkIds": []
+      },
+      "343": {
+        "chunkId": "194640",
+        "hash": "99d22567",
+        "encoded": "-%20Workflows%20timeout%20during%20checkout",
+        "prevChunkIds": []
+      },
+      "345": {
+        "chunkId": "194640",
+        "hash": "3abf20b8",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "347": {
+        "chunkId": "194640",
+        "hash": "5474e7d9",
+        "encoded": "1.%20**Test%20connectivity:**",
+        "prevChunkIds": []
+      },
+      "348": {
+        "chunkId": "194640",
+        "hash": "30720634",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "349": {
+        "chunkId": "194640",
+        "hash": "8775f333",
+        "encoded": "Test-NetConnection%20-ComputerName%20github.com%20-Port%20443",
+        "prevChunkIds": []
+      },
+      "350": {
+        "chunkId": "194640",
+        "hash": "0fc3a21f",
+        "encoded": "Test-NetConnection%20-ComputerName%20api.github.com%20-Port%20443",
+        "prevChunkIds": []
+      },
+      "351": {
+        "chunkId": "194640",
+        "hash": "4b7833c9",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "353": {
+        "chunkId": "194640",
+        "hash": "d84a45c2",
+        "encoded": "2.%20**Check%20GCP%20firewall%20egress%20rules:**",
+        "prevChunkIds": []
+      },
+      "354": {
+        "chunkId": "194640",
+        "hash": "28bfd1f9",
+        "encoded": "-%20GCP%20Console%20%E2%86%92%20VPC%20Network%20%E2%86%92%20Firewall",
+        "prevChunkIds": []
+      },
+      "355": {
+        "chunkId": "194640",
+        "hash": "f2790c3a",
+        "encoded": "-%20Ensure%20egress%20to%200.0.0.0/0%20on%20port%20443%20is%20allowed",
+        "prevChunkIds": []
+      },
+      "356": {
+        "chunkId": "194640",
+        "hash": "bf2c02eb",
+        "encoded": "-%20Default%20rule:%20%60default-allow-egress%60",
+        "prevChunkIds": []
+      },
+      "358": {
+        "chunkId": "194640",
+        "hash": "884ded53",
+        "encoded": "3.%20**Verify%20DNS%20resolution:**",
+        "prevChunkIds": []
+      },
+      "359": {
+        "chunkId": "194640",
+        "hash": "ce1bcc31",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "360": {
+        "chunkId": "194640",
+        "hash": "9cb3dde4",
+        "encoded": "nslookup%20github.com",
+        "prevChunkIds": []
+      },
+      "361": {
+        "chunkId": "194640",
+        "hash": "ec51e029",
+        "encoded": "#%20Should%20return%20IP%20addresses",
+        "prevChunkIds": []
+      },
+      "362": {
+        "chunkId": "194640",
+        "hash": "ada75d6f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "364": {
+        "chunkId": "194640",
+        "hash": "ecb892ee",
+        "encoded": "4.%20**Check%20Windows%20Firewall:**",
+        "prevChunkIds": []
+      },
+      "365": {
+        "chunkId": "194640",
+        "hash": "d13822c8",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "366": {
+        "chunkId": "194640",
+        "hash": "71269338",
+        "encoded": "#%20Temporarily%20disable%20for%20testing",
+        "prevChunkIds": []
+      },
+      "367": {
+        "chunkId": "194640",
+        "hash": "c04b7a38",
+        "encoded": "Set-NetFirewallProfile%20-Profile%20Domain,Public,Private%20-Enabled%20False",
+        "prevChunkIds": []
+      },
+      "368": {
+        "chunkId": "194640",
+        "hash": "a82cd459",
+        "encoded": "#%20If%20this%20fixes%20it,%20add%20explicit%20allow%20rule:",
+        "prevChunkIds": []
+      },
+      "369": {
+        "chunkId": "194640",
+        "hash": "f0e94104",
+        "encoded": "New-NetFirewallRule%20-DisplayName%20%22GitHub%20HTTPS%22%20-Direction%20Outbound%20-Protocol%20TCP%20-RemotePort%20443%20-Action%20Allow",
+        "prevChunkIds": []
+      },
+      "370": {
+        "chunkId": "194640",
+        "hash": "fb3d6ea4",
+        "encoded": "#%20Re-enable%20firewall",
+        "prevChunkIds": []
+      },
+      "371": {
+        "chunkId": "194640",
+        "hash": "94be87f9",
+        "encoded": "Set-NetFirewallProfile%20-Profile%20Domain,Public,Private%20-Enabled%20True",
+        "prevChunkIds": []
+      },
+      "372": {
+        "chunkId": "194640",
+        "hash": "bed33d85",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "374": {
+        "chunkId": "194640",
+        "hash": "862b9d0e",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "376": {
+        "chunkId": "194640",
+        "hash": "1200cc71",
+        "encoded": "###%20Slow%20Download/Upload%20Speeds",
+        "prevChunkIds": []
+      },
+      "378": {
+        "chunkId": "194640",
+        "hash": "ec2e0691",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "379": {
+        "chunkId": "194640",
+        "hash": "689ea801",
+        "encoded": "-%20Artifact%20uploads%20take%205+%20minutes",
+        "prevChunkIds": []
+      },
+      "380": {
+        "chunkId": "194640",
+        "hash": "aba814af",
+        "encoded": "-%20Git%20clone%20is%20very%20slow",
+        "prevChunkIds": []
+      },
+      "382": {
+        "chunkId": "194640",
+        "hash": "820732eb",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "384": {
+        "chunkId": "194640",
+        "hash": "a202fb56",
+        "encoded": "1.%20**Check%20network%20tier:**",
+        "prevChunkIds": []
+      },
+      "385": {
+        "chunkId": "194640",
+        "hash": "cf134e3d",
+        "encoded": "-%20GCP%20charges%20extra%20for%20Premium%20network%20tier",
+        "prevChunkIds": []
+      },
+      "386": {
+        "chunkId": "194640",
+        "hash": "ccd48de8",
+        "encoded": "-%20Standard%20tier%20may%20be%20slower%20but%20cheaper",
+        "prevChunkIds": []
+      },
+      "388": {
+        "chunkId": "194640",
+        "hash": "2a5da61c",
+        "encoded": "2.%20**Verify%20region:**",
+        "prevChunkIds": []
+      },
+      "389": {
+        "chunkId": "194640",
+        "hash": "e21f563a",
+        "encoded": "-%20Choose%20GCP%20region%20close%20to%20your%20location",
+        "prevChunkIds": []
+      },
+      "390": {
+        "chunkId": "194640",
+        "hash": "13dff7c5",
+        "encoded": "-%20GitHub%20CDN%20endpoints%20are%20globally%20distributed",
+        "prevChunkIds": []
+      },
+      "392": {
+        "chunkId": "194640",
+        "hash": "6a698dc3",
+        "encoded": "3.%20**Monitor%20network%20usage:**",
+        "prevChunkIds": []
+      },
+      "393": {
+        "chunkId": "194640",
+        "hash": "e4e2adca",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "394": {
+        "chunkId": "194640",
+        "hash": "9e4304d4",
+        "encoded": "Get-NetAdapterStatistics",
+        "prevChunkIds": []
+      },
+      "395": {
+        "chunkId": "194640",
+        "hash": "089d888a",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "397": {
+        "chunkId": "194640",
+        "hash": "5f5a124c",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "399": {
+        "chunkId": "194640",
+        "hash": "0ab24167",
+        "encoded": "##%20Performance%20Issues",
+        "prevChunkIds": []
+      },
+      "401": {
+        "chunkId": "194640",
+        "hash": "f7283f77",
+        "encoded": "###%20Workflows%20Take%20Too%20Long",
+        "prevChunkIds": []
+      },
+      "403": {
+        "chunkId": "194640",
+        "hash": "f1c88ce1",
+        "encoded": "**Expected%20time:**%201-2%20minutes",
+        "prevChunkIds": []
+      },
+      "404": {
+        "chunkId": "194640",
+        "hash": "35fe4e8e",
+        "encoded": "**Actual%20time:**%205-10+%20minutes",
+        "prevChunkIds": []
+      },
+      "406": {
+        "chunkId": "194640",
+        "hash": "eaa22f5e",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "408": {
+        "chunkId": "194640",
+        "hash": "3d0970b2",
+        "encoded": "1.%20**Check%20machine%20type:**",
+        "prevChunkIds": []
+      },
+      "409": {
+        "chunkId": "194640",
+        "hash": "bbec672a",
+        "encoded": "-%20Minimum:%20%60e2-medium%60%20(2%20vCPUs,%204%20GB)",
+        "prevChunkIds": []
+      },
+      "410": {
+        "chunkId": "194640",
+        "hash": "6ed4fc52",
+        "encoded": "-%20Recommended:%20%60e2-standard-2%60%20(2%20vCPUs,%208%20GB)",
+        "prevChunkIds": []
+      },
+      "411": {
+        "chunkId": "194640",
+        "hash": "cb81511b",
+        "encoded": "-%20For%20production:%20%60e2-standard-4%60%20(4%20vCPUs,%2016%20GB)",
+        "prevChunkIds": []
+      },
+      "413": {
+        "chunkId": "194640",
+        "hash": "68edfd00",
+        "encoded": "2.%20**Profile%20workflow%20steps:**",
+        "prevChunkIds": []
+      },
+      "414": {
+        "chunkId": "194640",
+        "hash": "ee5e0a01",
+        "encoded": "-%20Check%20Actions%20tab%20for%20step-by-step%20timing",
+        "prevChunkIds": []
+      },
+      "415": {
+        "chunkId": "194640",
+        "hash": "4c8823fd",
+        "encoded": "-%20Identify%20slow%20steps",
+        "prevChunkIds": []
+      },
+      "417": {
+        "chunkId": "194640",
+        "hash": "11227a0c",
+        "encoded": "3.%20**Optimize%20PowerShell%20scripts:**",
+        "prevChunkIds": []
+      },
+      "418": {
+        "chunkId": "194640",
+        "hash": "9f3d88b3",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "419": {
+        "chunkId": "194640",
+        "hash": "acdefb44",
+        "encoded": "#%20Use%20-Parallel%20for%20ForEach-Object%20in%20PowerShell%207+",
+        "prevChunkIds": []
+      },
+      "420": {
+        "chunkId": "194640",
+        "hash": "8a8abbbe",
+        "encoded": "Get-ChildItem%20%7C%20ForEach-Object%20-Parallel%20%7B",
+        "prevChunkIds": []
+      },
+      "421": {
+        "chunkId": "194640",
+        "hash": "68a559c3",
+        "encoded": "#%20Process%20items%20in%20parallel",
+        "prevChunkIds": []
+      },
+      "422": {
+        "chunkId": "194640",
+        "hash": "2d275979",
+        "encoded": "%7D%20-ThrottleLimit%204",
+        "prevChunkIds": []
+      },
+      "423": {
+        "chunkId": "194640",
+        "hash": "0e10142b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "425": {
+        "chunkId": "194640",
+        "hash": "7e0629b6",
+        "encoded": "4.%20**Enable%20workflow%20caching:**",
+        "prevChunkIds": []
+      },
+      "426": {
+        "chunkId": "194640",
+        "hash": "458b515e",
+        "encoded": "%60%60%60yaml",
+        "prevChunkIds": []
+      },
+      "427": {
+        "chunkId": "194640",
+        "hash": "12dd453b",
+        "encoded": "-%20name:%20Cache%20dependencies",
+        "prevChunkIds": []
+      },
+      "428": {
+        "chunkId": "194640",
+        "hash": "1f2c6c6b",
+        "encoded": "uses:%20actions/cache@v4",
+        "prevChunkIds": []
+      },
+      "429": {
+        "chunkId": "194640",
+        "hash": "8e8205a1",
+        "encoded": "with:",
+        "prevChunkIds": []
+      },
+      "430": {
+        "chunkId": "194640",
+        "hash": "e1af7ed3",
+        "encoded": "path:%20%7C",
+        "prevChunkIds": []
+      },
+      "431": {
+        "chunkId": "194640",
+        "hash": "fbf1a2b9",
+        "encoded": "~/.nuget/packages",
+        "prevChunkIds": []
+      },
+      "432": {
+        "chunkId": "194640",
+        "hash": "aa8776a2",
+        "encoded": "C:%5Ctemp%5Ccache",
+        "prevChunkIds": []
+      },
+      "433": {
+        "chunkId": "194640",
+        "hash": "c8823216",
+        "encoded": "key:%20$%7B%7B%20runner.os%20%7D%7D-cache-$%7B%7B%20hashFiles('**/packages.lock.json')%20%7D%7D",
+        "prevChunkIds": []
+      },
+      "434": {
+        "chunkId": "194640",
+        "hash": "fc87fbae",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "436": {
+        "chunkId": "194640",
+        "hash": "4eceddd7",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "438": {
+        "chunkId": "194640",
+        "hash": "47f9ae34",
+        "encoded": "##%20Cost%20Issues",
+        "prevChunkIds": []
+      },
+      "440": {
+        "chunkId": "194640",
+        "hash": "b66e40de",
+        "encoded": "###%20Unexpected%20High%20Billing",
+        "prevChunkIds": []
+      },
+      "442": {
+        "chunkId": "194640",
+        "hash": "d4ce603c",
+        "encoded": "**Symptoms:**",
+        "prevChunkIds": []
+      },
+      "443": {
+        "chunkId": "194640",
+        "hash": "efc69d3c",
+        "encoded": "-%20GCP%20billing%20alert",
+        "prevChunkIds": []
+      },
+      "444": {
+        "chunkId": "194640",
+        "hash": "befc3148",
+        "encoded": "-%20Monthly%20charges%20%3E%20$100",
+        "prevChunkIds": []
+      },
+      "446": {
+        "chunkId": "194640",
+        "hash": "3229e77c",
+        "encoded": "**Solutions:**",
+        "prevChunkIds": []
+      },
+      "448": {
+        "chunkId": "194640",
+        "hash": "418a2cb1",
+        "encoded": "1.%20**Check%20VM%20uptime:**",
+        "prevChunkIds": []
+      },
+      "449": {
+        "chunkId": "194640",
+        "hash": "dbe03d50",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "450": {
+        "chunkId": "194640",
+        "hash": "2b73fc84",
+        "encoded": "#%20In%20GCP%20Cloud%20Shell%20or%20local%20gcloud%20CLI",
+        "prevChunkIds": []
+      },
+      "451": {
+        "chunkId": "194640",
+        "hash": "302ea500",
+        "encoded": "gcloud%20compute%20instances%20list%20--format=%22table(name,status,creationTimestamp)%22",
+        "prevChunkIds": []
+      },
+      "452": {
+        "chunkId": "194640",
+        "hash": "7ee4dceb",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "454": {
+        "chunkId": "194640",
+        "hash": "9140dba6",
+        "encoded": "2.%20**Stop%20VM%20when%20not%20needed:**",
+        "prevChunkIds": []
+      },
+      "455": {
+        "chunkId": "194640",
+        "hash": "423e23ab",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "456": {
+        "chunkId": "194640",
+        "hash": "f541c799",
+        "encoded": "gcloud%20compute%20instances%20stop%20github-runner-windows%20--zone=us-central1-a",
+        "prevChunkIds": []
+      },
+      "457": {
+        "chunkId": "194640",
+        "hash": "5463565d",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "459": {
+        "chunkId": "194640",
+        "hash": "823903c5",
+        "encoded": "3.%20**Review%20billing%20breakdown:**",
+        "prevChunkIds": []
+      },
+      "460": {
+        "chunkId": "194640",
+        "hash": "36c73cb3",
+        "encoded": "-%20GCP%20Console%20%E2%86%92%20Billing%20%E2%86%92%20Reports",
+        "prevChunkIds": []
+      },
+      "461": {
+        "chunkId": "194640",
+        "hash": "8372c51c",
+        "encoded": "-%20Filter%20by:%20Compute%20Engine",
+        "prevChunkIds": []
+      },
+      "462": {
+        "chunkId": "194640",
+        "hash": "e3ef0397",
+        "encoded": "-%20Check%20for:",
+        "prevChunkIds": []
+      },
+      "463": {
+        "chunkId": "194640",
+        "hash": "707705fe",
+        "encoded": "-%20VM%20instance%20hours",
+        "prevChunkIds": []
+      },
+      "464": {
+        "chunkId": "194640",
+        "hash": "14c3374c",
+        "encoded": "-%20Persistent%20disk%20charges",
+        "prevChunkIds": []
+      },
+      "465": {
+        "chunkId": "194640",
+        "hash": "3c9c6b19",
+        "encoded": "-%20Network%20egress%20(data%20transfer%20out)",
+        "prevChunkIds": []
+      },
+      "467": {
+        "chunkId": "194640",
+        "hash": "e325fc97",
+        "encoded": "4.%20**Set%20up%20budget%20alerts:**",
+        "prevChunkIds": []
+      },
+      "468": {
+        "chunkId": "194640",
+        "hash": "ab19836b",
+        "encoded": "-%20GCP%20Console%20%E2%86%92%20Billing%20%E2%86%92%20Budgets%20&%20alerts",
+        "prevChunkIds": []
+      },
+      "469": {
+        "chunkId": "194640",
+        "hash": "d1a309b6",
+        "encoded": "-%20Create%20budget:%20$50/month",
+        "prevChunkIds": []
+      },
+      "470": {
+        "chunkId": "194640",
+        "hash": "1f4a7b97",
+        "encoded": "-%20Alert%20threshold:%2050%25,%2090%25,%20100%25",
+        "prevChunkIds": []
+      },
+      "472": {
+        "chunkId": "194640",
+        "hash": "fef8ea8d",
+        "encoded": "5.%20**Use%20cost-saving%20measures:**",
+        "prevChunkIds": []
+      },
+      "473": {
+        "chunkId": "194640",
+        "hash": "7e64ecb8",
+        "encoded": "-%20**Committed%20use%20discounts:**%201-year%20or%203-year%20commitment%20(30-60%25%20off)",
+        "prevChunkIds": []
+      },
+      "474": {
+        "chunkId": "194640",
+        "hash": "08dee9e9",
+        "encoded": "-%20**Sustained%20use%20discounts:**%20Automatic%20for%20VMs%20running%20%3E25%25%20of%20month",
+        "prevChunkIds": []
+      },
+      "475": {
+        "chunkId": "194640",
+        "hash": "3b339f6d",
+        "encoded": "-%20**Spot%20VMs:**%2060-91%25%20cheaper%20but%20can%20be%20interrupted",
+        "prevChunkIds": []
+      },
+      "477": {
+        "chunkId": "194640",
+        "hash": "026152bd",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "479": {
+        "chunkId": "194640",
+        "hash": "a2e0d870",
+        "encoded": "##%20Advanced%20Debugging",
+        "prevChunkIds": []
+      },
+      "481": {
+        "chunkId": "194640",
+        "hash": "e4bb0426",
+        "encoded": "###%20Enable%20Runner%20Diagnostic%20Mode",
+        "prevChunkIds": []
+      },
+      "483": {
+        "chunkId": "194640",
+        "hash": "dd7dc9ef",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "484": {
+        "chunkId": "194640",
+        "hash": "9915af93",
+        "encoded": "#%20Stop%20runner%20service",
+        "prevChunkIds": []
+      },
+      "485": {
+        "chunkId": "194640",
+        "hash": "a21c7a3f",
+        "encoded": "cd%20C:%5Cactions-runner",
+        "prevChunkIds": []
+      },
+      "486": {
+        "chunkId": "194640",
+        "hash": "25257830",
+        "encoded": ".%5Csvc.cmd%20stop",
+        "prevChunkIds": []
+      },
+      "488": {
+        "chunkId": "194640",
+        "hash": "fd2ffa50",
+        "encoded": "#%20Run%20in%20diagnostic%20mode",
+        "prevChunkIds": []
+      },
+      "489": {
+        "chunkId": "194640",
+        "hash": "c2cf1751",
+        "encoded": "$env:ACTIONS_RUNNER_PRINT_LOG_TO_STDOUT%20=%201",
+        "prevChunkIds": []
+      },
+      "490": {
+        "chunkId": "194640",
+        "hash": "e9b2aaf0",
+        "encoded": "$env:ACTIONS_STEP_DEBUG%20=%20%22true%22",
+        "prevChunkIds": []
+      },
+      "491": {
+        "chunkId": "194640",
+        "hash": "43365bff",
+        "encoded": ".%5Crun.cmd",
+        "prevChunkIds": []
+      },
+      "492": {
+        "chunkId": "194640",
+        "hash": "9516ed32",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "494": {
+        "chunkId": "194640",
+        "hash": "c53cd3c4",
+        "encoded": "###%20Capture%20Network%20Traffic",
+        "prevChunkIds": []
+      },
+      "496": {
+        "chunkId": "194640",
+        "hash": "6deb1674",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "497": {
+        "chunkId": "194640",
+        "hash": "4c781470",
+        "encoded": "#%20Install%20Wireshark%20or%20use%20built-in%20pktmon",
+        "prevChunkIds": []
+      },
+      "498": {
+        "chunkId": "194640",
+        "hash": "9960db90",
+        "encoded": "pktmon%20start%20--etw%20-p%20Microsoft-Windows-TCPIP%20-c",
+        "prevChunkIds": []
+      },
+      "499": {
+        "chunkId": "194640",
+        "hash": "8839d550",
+        "encoded": "#%20Reproduce%20issue",
+        "prevChunkIds": []
+      },
+      "500": {
+        "chunkId": "194640",
+        "hash": "59ece678",
+        "encoded": "pktmon%20stop",
+        "prevChunkIds": []
+      },
+      "501": {
+        "chunkId": "194640",
+        "hash": "86aa33d2",
+        "encoded": "pktmon%20format%20pktmon.etl%20-o%20network-trace.txt",
+        "prevChunkIds": []
+      },
+      "502": {
+        "chunkId": "194640",
+        "hash": "2ddac335",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "504": {
+        "chunkId": "194640",
+        "hash": "8286e663",
+        "encoded": "###%20Export%20Runner%20Logs",
+        "prevChunkIds": []
+      },
+      "506": {
+        "chunkId": "194640",
+        "hash": "5e4213d5",
+        "encoded": "%60%60%60powershell",
+        "prevChunkIds": []
+      },
+      "507": {
+        "chunkId": "194640",
+        "hash": "aee86290",
+        "encoded": "cd%20C:%5Cactions-runner%5C_diag",
+        "prevChunkIds": []
+      },
+      "508": {
+        "chunkId": "194640",
+        "hash": "ce3a986e",
+        "encoded": "$timestamp%20=%20Get-Date%20-Format%20%22yyyyMMdd-HHmmss%22",
+        "prevChunkIds": []
+      },
+      "509": {
+        "chunkId": "194640",
+        "hash": "f4affa8a",
+        "encoded": "Compress-Archive%20-Path%20.%5C*.log%20-DestinationPath%20%22C:%5Crunner-logs-$timestamp.zip%22",
+        "prevChunkIds": []
+      },
+      "510": {
+        "chunkId": "194640",
+        "hash": "51a19bf7",
+        "encoded": "#%20Download%20via%20RDP%20or%20upload%20to%20cloud%20storage",
+        "prevChunkIds": []
+      },
+      "511": {
+        "chunkId": "194640",
+        "hash": "578f6fa0",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "513": {
+        "chunkId": "194640",
+        "hash": "6af6b80f",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "515": {
+        "chunkId": "194640",
+        "hash": "6bee2e04",
+        "encoded": "##%20Getting%20Help",
+        "prevChunkIds": []
+      },
+      "517": {
+        "chunkId": "194640",
+        "hash": "1fa0f831",
+        "encoded": "###%20Before%20Opening%20an%20Issue",
+        "prevChunkIds": []
+      },
+      "519": {
+        "chunkId": "194640",
+        "hash": "761b41fa",
+        "encoded": "1.%20%E2%98%91%20Check%20this%20troubleshooting%20guide",
+        "prevChunkIds": []
+      },
+      "520": {
+        "chunkId": "194640",
+        "hash": "39e5f550",
+        "encoded": "2.%20%E2%98%91%20Review%20GitHub%20Actions%20logs",
+        "prevChunkIds": []
+      },
+      "521": {
+        "chunkId": "194640",
+        "hash": "84cb28b0",
+        "encoded": "3.%20%E2%98%91%20Check%20runner%20diagnostic%20logs",
+        "prevChunkIds": []
+      },
+      "522": {
+        "chunkId": "194640",
+        "hash": "711ef5d1",
+        "encoded": "4.%20%E2%98%91%20Verify%20GCP%20VM%20is%20running%20and%20accessible",
+        "prevChunkIds": []
+      },
+      "523": {
+        "chunkId": "194640",
+        "hash": "8634fc0f",
+        "encoded": "5.%20%E2%98%91%20Search%20existing%20GitHub%20Issues",
+        "prevChunkIds": []
+      },
+      "525": {
+        "chunkId": "194640",
+        "hash": "d8b741aa",
+        "encoded": "###%20What%20to%20Include%20in%20Issue%20Reports",
+        "prevChunkIds": []
+      },
+      "527": {
+        "chunkId": "194640",
+        "hash": "1a7d1b6d",
+        "encoded": "-%20**Problem%20description:**%20What%20you%20expected%20vs.%20what%20happened",
+        "prevChunkIds": []
+      },
+      "528": {
+        "chunkId": "194640",
+        "hash": "0c198b45",
+        "encoded": "-%20**Workflow%20file:**%20%60.github/workflows/image-factory.yml%60",
+        "prevChunkIds": []
+      },
+      "529": {
+        "chunkId": "194640",
+        "hash": "ce61dddd",
+        "encoded": "-%20**Runner%20version:**%20From%20GitHub%20Settings%20%E2%86%92%20Actions%20%E2%86%92%20Runners",
+        "prevChunkIds": []
+      },
+      "530": {
+        "chunkId": "194640",
+        "hash": "1bc7782a",
+        "encoded": "-%20**Error%20messages:**%20Full%20text%20from%20logs",
+        "prevChunkIds": []
+      },
+      "531": {
+        "chunkId": "194640",
+        "hash": "1f45392b",
+        "encoded": "-%20**Steps%20to%20reproduce**",
+        "prevChunkIds": []
+      },
+      "532": {
+        "chunkId": "194640",
+        "hash": "92c5b8d9",
+        "encoded": "-%20**GCP%20VM%20details:**%20Machine%20type,%20region,%20OS%20version",
+        "prevChunkIds": []
+      },
+      "534": {
+        "chunkId": "194640",
+        "hash": "be2f1536",
+        "encoded": "###%20Useful%20Resources",
+        "prevChunkIds": []
+      },
+      "536": {
+        "chunkId": "194640",
+        "hash": "c68c828a",
+        "encoded": "-%20%5BGitHub%20Actions%20Documentation%5D(https://docs.github.com/en/actions)",
+        "prevChunkIds": []
+      },
+      "537": {
+        "chunkId": "194640",
+        "hash": "2980d4fb",
+        "encoded": "-%20%5BSelf-Hosted%20Runner%20Docs%5D(https://docs.github.com/en/actions/hosting-your-own-runners)",
+        "prevChunkIds": []
+      },
+      "538": {
+        "chunkId": "194640",
+        "hash": "32bddf0a",
+        "encoded": "-%20%5BGCP%20Compute%20Engine%20Docs%5D(https://cloud.google.com/compute/docs)",
+        "prevChunkIds": []
+      },
+      "539": {
+        "chunkId": "194640",
+        "hash": "b897e228",
+        "encoded": "-%20%5BPowerShell%20Documentation%5D(https://learn.microsoft.com/en-us/powershell/)",
+        "prevChunkIds": []
+      },
+      "541": {
+        "chunkId": "194640",
+        "hash": "8db68875",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "543": {
+        "chunkId": "194640",
+        "hash": "601b2a5b",
+        "encoded": "**Still%20stuck?**%20Open%20an%20issue%20in%20the%20repository%20with%20details%20from%20the%20checklist%20above.",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

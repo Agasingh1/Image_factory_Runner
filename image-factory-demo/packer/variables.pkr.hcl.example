@@ -1,0 +1,7 @@
+# Copy to variables.pkrvars.hcl locally; do not commit local secret values.
+iso_path       = "C:/ISO/approved-windows.iso"
+iso_checksum   = "sha256:REPLACE_WITH_REAL_SHA256"
+switch_name    = "Default Switch"
+vm_name        = "image-factory-demo"
+memory         = 4096
+cpus           = 2

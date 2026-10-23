@@ -1,0 +1,66 @@
+{
+  ".github\\workflows\\image-factory.yml": {
+    "filename": "image-factory.yml",
+    "path": ".github\\workflows\\image-factory.yml",
+    "version": "1.2",
+    "contextFile": "11ff4f05-context.json",
+    "chunks": {
+      "dbca4f": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792739000,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentEditTool",
+        "extraContext": {
+          "promptMessage": "13a8c8e4"
+        },
+        "hash": "3f9e57d4",
+        "messageId": "system_c60856f0-ceaf-11f1-9db6-9508a8babbdd",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:33:20 PM\n- **source**: agent\n- **type**: agentEditTool\n"
+      }
+    },
+    "lines": {
+      "18": {
+        "chunkId": "dbca4f",
+        "hash": "9dc4c4c4",
+        "encoded": "jobs:",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "dbca4f",
+        "hash": "baa9c9b5",
+        "encoded": "validate-and-simulate:",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "dbca4f",
+        "hash": "32fa5c46",
+        "encoded": "#%20Self-hosted%20runner:%20Configure%20your%20runner%20with%20labels%20%5Bself-hosted,%20windows%5D",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "dbca4f",
+        "hash": "32f88025",
+        "encoded": "#%20For%20GCP%20VM%20setup%20instructions,%20see%20SELF_HOSTED_SETUP.md",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "dbca4f",
+        "hash": "ced4aac8",
+        "encoded": "runs-on:%20%5Bself-hosted,%20windows%5D",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "dbca4f",
+        "hash": "6893a9bc",
+        "encoded": "steps:",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

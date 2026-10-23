@@ -1,0 +1,15 @@
+{
+  "filename": "image-factory.yml",
+  "path": ".github\\workflows\\image-factory.yml",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "13a8c8e4": {
+      "value": "update the whole project so that  can make it self hosted and give me the steps that i need to do"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

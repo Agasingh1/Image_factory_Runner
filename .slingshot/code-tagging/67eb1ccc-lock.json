@@ -1,0 +1,1620 @@
+{
+  "ARCHITECTURE.md": {
+    "filename": "ARCHITECTURE.md",
+    "path": "ARCHITECTURE.md",
+    "version": "1.2",
+    "contextFile": "67eb1ccc-context.json",
+    "chunks": {
+      "11876d": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792739228,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "13a8c8e4"
+        },
+        "hash": "07d41efd",
+        "messageId": "system_c60856f0-ceaf-11f1-9db6-9508a8babbdd",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:37:08 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "11876d",
+        "hash": "bf0cafc3",
+        "encoded": "#%20Architecture%20Overview",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "11876d",
+        "hash": "4cca1d4f",
+        "encoded": "This%20document%20explains%20how%20the%20self-hosted%20runner%20architecture%20works%20for%20the%20Windows%20Image%20Factory%20Demo.",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "11876d",
+        "hash": "d451620a",
+        "encoded": "##%20System%20Architecture",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "11876d",
+        "hash": "b5b7334a",
+        "encoded": "%60%60%60mermaid",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "11876d",
+        "hash": "0b83f84f",
+        "encoded": "graph%20TB",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "11876d",
+        "hash": "393a76c0",
+        "encoded": "subgraph%20GitHub",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "11876d",
+        "hash": "eb95b971",
+        "encoded": "A%5BGitHub%20Repository%5D%20--%3E%20B%5BGitHub%20Actions%20Workflow%5D",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "11876d",
+        "hash": "7a9997d2",
+        "encoded": "B%20--%3E%20C%5BJob%20Queue%5D",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "11876d",
+        "hash": "e5b11cdd",
+        "encoded": "end",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "11876d",
+        "hash": "18ec8a39",
+        "encoded": "subgraph%20GCP%5BGoogle%20Cloud%20Platform%5D",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "11876d",
+        "hash": "a2b2820d",
+        "encoded": "D%5BWindows%20Server%20VM%5D",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "11876d",
+        "hash": "3b2cbaca",
+        "encoded": "E%5BGitHub%20Runner%20Service%5D",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "11876d",
+        "hash": "9e1ad9dd",
+        "encoded": "F%5BPowerShell%20Scripts%5D",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "11876d",
+        "hash": "8d00848b",
+        "encoded": "G%5BBuild%20Artifacts%5D",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "11876d",
+        "hash": "4e6a00f0",
+        "encoded": "D%20--%3E%20E",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "11876d",
+        "hash": "2e0e3039",
+        "encoded": "E%20--%3E%20F",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "11876d",
+        "hash": "4353e6f5",
+        "encoded": "F%20--%3E%20G",
+        "prevChunkIds": []
+      },
+      "22": {
+        "chunkId": "11876d",
+        "hash": "d72862a1",
+        "encoded": "end",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "11876d",
+        "hash": "0fa57dd8",
+        "encoded": "C%20--%3E%7CJob%20Assignment%7C%20E",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "11876d",
+        "hash": "6e5eee69",
+        "encoded": "E%20--%3E%7CJob%20Status%7C%20B",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "11876d",
+        "hash": "b25d6542",
+        "encoded": "G%20--%3E%7CUpload%7C%20A",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "11876d",
+        "hash": "3188a44a",
+        "encoded": "style%20A%20fill:#24292e,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "11876d",
+        "hash": "b4d79802",
+        "encoded": "style%20B%20fill:#2088FF,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "11876d",
+        "hash": "7d44b3f9",
+        "encoded": "style%20D%20fill:#4285f4,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "11876d",
+        "hash": "9cca2330",
+        "encoded": "style%20E%20fill:#43A047,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "11876d",
+        "hash": "41512291",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "11876d",
+        "hash": "ac56ca73",
+        "encoded": "##%20Component%20Details",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "11876d",
+        "hash": "41e0d4ca",
+        "encoded": "###%20GitHub%20Components",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "11876d",
+        "hash": "f3b3a12f",
+        "encoded": "####%201.%20Repository",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "11876d",
+        "hash": "de706814",
+        "encoded": "-%20Stores%20source%20code,%20scripts,%20and%20configurations",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "11876d",
+        "hash": "44383e47",
+        "encoded": "-%20Hosts%20the%20workflow%20definition%20(%60.github/workflows/image-factory.yml%60)",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "11876d",
+        "hash": "6e78b5be",
+        "encoded": "-%20Receives%20and%20stores%20build%20artifacts",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "11876d",
+        "hash": "ddf88979",
+        "encoded": "####%202.%20GitHub%20Actions%20Workflow",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "11876d",
+        "hash": "74c64765",
+        "encoded": "-%20Defines%20the%20CI/CD%20pipeline",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "11876d",
+        "hash": "ed274dc6",
+        "encoded": "-%20Triggers%20on%20push,%20PR,%20or%20manual%20dispatch",
+        "prevChunkIds": []
+      },
+      "46": {
+        "chunkId": "11876d",
+        "hash": "a980ceae",
+        "encoded": "-%20Queues%20jobs%20for%20execution",
+        "prevChunkIds": []
+      },
+      "48": {
+        "chunkId": "11876d",
+        "hash": "24fdaffe",
+        "encoded": "####%203.%20Job%20Queue",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "11876d",
+        "hash": "96d90029",
+        "encoded": "-%20Matches%20jobs%20to%20available%20runners%20based%20on%20labels",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "11876d",
+        "hash": "3c52831b",
+        "encoded": "-%20Ensures%20%60%5Bself-hosted,%20windows%5D%60%20jobs%20go%20to%20your%20GCP%20VM",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "11876d",
+        "hash": "ba9dff35",
+        "encoded": "###%20GCP%20Components",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "11876d",
+        "hash": "1411febf",
+        "encoded": "####%201.%20Windows%20Server%20VM",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "11876d",
+        "hash": "657ea445",
+        "encoded": "-%20**OS:**%20Windows%20Server%202022%20Datacenter",
+        "prevChunkIds": []
+      },
+      "56": {
+        "chunkId": "11876d",
+        "hash": "ac79c313",
+        "encoded": "-%20**Purpose:**%20Hosts%20the%20GitHub%20runner%20and%20executes%20workflows",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "11876d",
+        "hash": "af26a8c5",
+        "encoded": "-%20**Specs:**%202-4%20vCPUs,%208-16%20GB%20RAM,%2050%20GB%20disk",
+        "prevChunkIds": []
+      },
+      "59": {
+        "chunkId": "11876d",
+        "hash": "520a7a80",
+        "encoded": "####%202.%20GitHub%20Runner%20Service",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "11876d",
+        "hash": "66507c94",
+        "encoded": "-%20Windows%20service%20running%2024/7",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "11876d",
+        "hash": "1246f810",
+        "encoded": "-%20Polls%20GitHub%20for%20jobs%20matching%20its%20labels",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "11876d",
+        "hash": "cb92d3f0",
+        "encoded": "-%20Executes%20workflow%20steps%20in%20isolated%20environment",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "11876d",
+        "hash": "8cc44f9a",
+        "encoded": "####%203.%20PowerShell%20Scripts",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "11876d",
+        "hash": "a69c9185",
+        "encoded": "-%20Configuration%20validation",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "11876d",
+        "hash": "30f32b64",
+        "encoded": "-%20Image%20build%20simulation",
+        "prevChunkIds": []
+      },
+      "67": {
+        "chunkId": "11876d",
+        "hash": "622afc20",
+        "encoded": "-%20Artifact%20generation%20and%20validation",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "11876d",
+        "hash": "ee35c288",
+        "encoded": "-%20Tanium%20package%20creation",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "11876d",
+        "hash": "9fd554ba",
+        "encoded": "####%204.%20Build%20Artifacts",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "11876d",
+        "hash": "df1c27f3",
+        "encoded": "-%20Generated%20during%20workflow%20execution",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "11876d",
+        "hash": "fa5c12a3",
+        "encoded": "-%20Uploaded%20back%20to%20GitHub%20for%20storage",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "11876d",
+        "hash": "bb88f2db",
+        "encoded": "-%20Downloadable%20from%20Actions%20tab",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "11876d",
+        "hash": "e396de41",
+        "encoded": "##%20Workflow%20Execution%20Flow",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "11876d",
+        "hash": "3864e409",
+        "encoded": "%60%60%60mermaid",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "11876d",
+        "hash": "31ac9349",
+        "encoded": "sequenceDiagram",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "11876d",
+        "hash": "c8cf30b9",
+        "encoded": "participant%20Dev%20as%20Developer",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "11876d",
+        "hash": "a6200660",
+        "encoded": "participant%20GH%20as%20GitHub",
+        "prevChunkIds": []
+      },
+      "81": {
+        "chunkId": "11876d",
+        "hash": "a5e5c7fc",
+        "encoded": "participant%20VM%20as%20GCP%20VM%20Runner",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "11876d",
+        "hash": "ace2fe9e",
+        "encoded": "participant%20PS%20as%20PowerShell%20Scripts",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "11876d",
+        "hash": "19d15621",
+        "encoded": "Dev-%3E%3EGH:%20Push%20code%20changes",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "11876d",
+        "hash": "c57560a3",
+        "encoded": "GH-%3E%3EGH:%20Trigger%20workflow",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "11876d",
+        "hash": "504a0921",
+        "encoded": "GH-%3E%3EVM:%20Assign%20job%20(label:%20self-hosted,%20windows)",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "11876d",
+        "hash": "940640b9",
+        "encoded": "VM-%3E%3EGH:%20Accept%20job",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "11876d",
+        "hash": "d1dd2499",
+        "encoded": "VM-%3E%3EVM:%20Checkout%20repository",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "11876d",
+        "hash": "6c5eaa72",
+        "encoded": "VM-%3E%3EPS:%20Execute%20validate-config.ps1",
+        "prevChunkIds": []
+      },
+      "90": {
+        "chunkId": "11876d",
+        "hash": "7397fbe9",
+        "encoded": "PS--%3E%3EVM:%20Validation%20result",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "11876d",
+        "hash": "826ec2a8",
+        "encoded": "VM-%3E%3EPS:%20Execute%20Test-Project.ps1",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "11876d",
+        "hash": "676c7523",
+        "encoded": "PS--%3E%3EVM:%20Test%20result",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "11876d",
+        "hash": "385b5977",
+        "encoded": "VM-%3E%3EPS:%20Execute%20simulate-build.ps1",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "11876d",
+        "hash": "5b179237",
+        "encoded": "PS--%3E%3EVM:%20Build%20artifacts",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "11876d",
+        "hash": "5b709ab4",
+        "encoded": "VM-%3E%3EPS:%20Execute%20validate-artifacts.ps1",
+        "prevChunkIds": []
+      },
+      "96": {
+        "chunkId": "11876d",
+        "hash": "7befe118",
+        "encoded": "PS--%3E%3EVM:%20Validation%20result",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "11876d",
+        "hash": "e0c83b28",
+        "encoded": "VM-%3E%3EPS:%20Execute%20new-tanium-package.ps1",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "11876d",
+        "hash": "43f86ca5",
+        "encoded": "PS--%3E%3EVM:%20Tanium%20package",
+        "prevChunkIds": []
+      },
+      "99": {
+        "chunkId": "11876d",
+        "hash": "322e496b",
+        "encoded": "VM-%3E%3EGH:%20Upload%20artifacts",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "11876d",
+        "hash": "89583ecf",
+        "encoded": "GH-%3E%3EDev:%20Workflow%20complete%20notification",
+        "prevChunkIds": []
+      },
+      "101": {
+        "chunkId": "11876d",
+        "hash": "df7eddb8",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "103": {
+        "chunkId": "11876d",
+        "hash": "e3f819b3",
+        "encoded": "##%20Data%20Flow",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "11876d",
+        "hash": "f650c1ff",
+        "encoded": "%60%60%60mermaid",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "11876d",
+        "hash": "3f1c6e2f",
+        "encoded": "graph%20LR",
+        "prevChunkIds": []
+      },
+      "107": {
+        "chunkId": "11876d",
+        "hash": "dacda3d5",
+        "encoded": "A%5Bconfigs/device.yaml%5D%20--%3E%20B%5Bvalidate-config.ps1%5D",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "11876d",
+        "hash": "f349c67a",
+        "encoded": "B%20--%3E%20C%7BValid?%7D",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "11876d",
+        "hash": "fa7d1940",
+        "encoded": "C%20--%3E%7CYes%7C%20D%5Bsimulate-build.ps1%5D",
+        "prevChunkIds": []
+      },
+      "110": {
+        "chunkId": "11876d",
+        "hash": "f7630d89",
+        "encoded": "C%20--%3E%7CNo%7C%20E%5BWorkflow%20Fails%5D",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "11876d",
+        "hash": "28d21bd5",
+        "encoded": "D%20--%3E%20F%5Bartifacts/%5D",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "11876d",
+        "hash": "ba6a5ac7",
+        "encoded": "F%20--%3E%20G%5Bvalidate-artifacts.ps1%5D",
+        "prevChunkIds": []
+      },
+      "113": {
+        "chunkId": "11876d",
+        "hash": "86f5bba3",
+        "encoded": "G%20--%3E%20H%7BValid?%7D",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "11876d",
+        "hash": "7f7a0dab",
+        "encoded": "H%20--%3E%7CYes%7C%20I%5Bnew-tanium-package.ps1%5D",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "11876d",
+        "hash": "b57c4fb7",
+        "encoded": "H%20--%3E%7CNo%7C%20E",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "11876d",
+        "hash": "42d48a4d",
+        "encoded": "I%20--%3E%20J%5BUpload%20to%20GitHub%5D",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "11876d",
+        "hash": "f7c08535",
+        "encoded": "J%20--%3E%20K%5BDownload%20from%20Actions%20Tab%5D",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "11876d",
+        "hash": "1a0cdc81",
+        "encoded": "style%20C%20fill:#FFA726,stroke:#fff,color:#000",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "11876d",
+        "hash": "c2d8e4d2",
+        "encoded": "style%20H%20fill:#FFA726,stroke:#fff,color:#000",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "11876d",
+        "hash": "f644a343",
+        "encoded": "style%20E%20fill:#E53935,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "11876d",
+        "hash": "64d210f6",
+        "encoded": "style%20K%20fill:#43A047,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "123": {
+        "chunkId": "11876d",
+        "hash": "2a394f84",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "125": {
+        "chunkId": "11876d",
+        "hash": "68c865e8",
+        "encoded": "##%20Network%20Communication",
+        "prevChunkIds": []
+      },
+      "127": {
+        "chunkId": "11876d",
+        "hash": "07474516",
+        "encoded": "###%20Outbound%20Connections%20from%20GCP%20VM",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "11876d",
+        "hash": "02baf0f1",
+        "encoded": "%7C%20Destination%20%7C%20Port%20%7C%20Protocol%20%7C%20Purpose%20%7C",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "11876d",
+        "hash": "7720db9a",
+        "encoded": "%7C------------%7C------%7C----------%7C----------%7C",
+        "prevChunkIds": []
+      },
+      "131": {
+        "chunkId": "11876d",
+        "hash": "1982c112",
+        "encoded": "%7C%20%60github.com%60%20%7C%20443%20%7C%20HTTPS%20%7C%20Job%20polling,%20code%20checkout%20%7C",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "11876d",
+        "hash": "884b05b4",
+        "encoded": "%7C%20%60api.github.com%60%20%7C%20443%20%7C%20HTTPS%20%7C%20API%20requests%20%7C",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "11876d",
+        "hash": "a5acfe89",
+        "encoded": "%7C%20%60*.actions.githubusercontent.com%60%20%7C%20443%20%7C%20HTTPS%20%7C%20Artifact%20uploads%20%7C",
+        "prevChunkIds": []
+      },
+      "134": {
+        "chunkId": "11876d",
+        "hash": "284961b4",
+        "encoded": "%7C%20%60*.blob.core.windows.net%60%20%7C%20443%20%7C%20HTTPS%20%7C%20Action%20dependencies%20%7C",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "11876d",
+        "hash": "e58a9f81",
+        "encoded": "###%20Inbound%20Connections%20to%20GCP%20VM",
+        "prevChunkIds": []
+      },
+      "138": {
+        "chunkId": "11876d",
+        "hash": "fac74458",
+        "encoded": "%7C%20Source%20%7C%20Port%20%7C%20Protocol%20%7C%20Purpose%20%7C",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "11876d",
+        "hash": "982a1bce",
+        "encoded": "%7C--------%7C------%7C----------%7C----------%7C",
+        "prevChunkIds": []
+      },
+      "140": {
+        "chunkId": "11876d",
+        "hash": "5126aadc",
+        "encoded": "%7C%20Your%20IP%20%7C%203389%20%7C%20RDP%20%7C%20Remote%20desktop%20access%20%7C",
+        "prevChunkIds": []
+      },
+      "142": {
+        "chunkId": "11876d",
+        "hash": "e0b9a017",
+        "encoded": "**Security%20Note:**%20GitHub%20never%20initiates%20connections%20to%20your%20runner.%20The%20runner%20always%20polls%20GitHub.",
+        "prevChunkIds": []
+      },
+      "144": {
+        "chunkId": "11876d",
+        "hash": "d13d4cc6",
+        "encoded": "##%20File%20System%20Layout%20on%20Runner",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "11876d",
+        "hash": "5b532b7f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "147": {
+        "chunkId": "11876d",
+        "hash": "df2b5b58",
+        "encoded": "C:%5C",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "11876d",
+        "hash": "46b8cea7",
+        "encoded": "%E2%94%9C%E2%94%80%E2%94%80%20actions-runner/%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Runner%20installation",
+        "prevChunkIds": []
+      },
+      "149": {
+        "chunkId": "11876d",
+        "hash": "bbba3bfc",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20bin/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Runner%20binaries",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "11876d",
+        "hash": "49989171",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20_diag/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Diagnostic%20logs",
+        "prevChunkIds": []
+      },
+      "151": {
+        "chunkId": "11876d",
+        "hash": "eeede009",
+        "encoded": "%E2%94%82%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20_work/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20#%20Workspace%20for%20jobs",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "11876d",
+        "hash": "2d702436",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20image-factory-demo/%20%20%20#%20Cloned%20repository",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "11876d",
+        "hash": "30a93d4e",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20configs/",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "11876d",
+        "hash": "5337b3f7",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20scripts/",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "11876d",
+        "hash": "30a03594",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%9C%E2%94%80%E2%94%80%20tests/",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "11876d",
+        "hash": "a18df125",
+        "encoded": "%E2%94%82%20%20%20%E2%94%82%20%20%20%20%20%20%20%E2%94%94%E2%94%80%E2%94%80%20artifacts/%20%20%20%20%20%20%20%20#%20Build%20outputs",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "11876d",
+        "hash": "803abd59",
+        "encoded": "%E2%94%82%20%20%20%E2%94%94%E2%94%80%E2%94%80%20config%20files",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "11876d",
+        "hash": "26af124b",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "11876d",
+        "hash": "c4b9568a",
+        "encoded": "##%20Security%20Architecture",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "11876d",
+        "hash": "cc676e3e",
+        "encoded": "%60%60%60mermaid",
+        "prevChunkIds": []
+      },
+      "163": {
+        "chunkId": "11876d",
+        "hash": "2da6e64d",
+        "encoded": "graph%20TB",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "11876d",
+        "hash": "8bb05c85",
+        "encoded": "subgraph%20Public%20Internet",
+        "prevChunkIds": []
+      },
+      "165": {
+        "chunkId": "11876d",
+        "hash": "f6304e65",
+        "encoded": "A%5BGitHub.com%5D",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "11876d",
+        "hash": "1a3d9c59",
+        "encoded": "end",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "11876d",
+        "hash": "1442159f",
+        "encoded": "subgraph%20GCP%20Network",
+        "prevChunkIds": []
+      },
+      "169": {
+        "chunkId": "11876d",
+        "hash": "c4a9031c",
+        "encoded": "B%5BFirewall%20Rules%5D",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "11876d",
+        "hash": "a148b9e6",
+        "encoded": "C%5BVM%20Instance%5D",
+        "prevChunkIds": []
+      },
+      "171": {
+        "chunkId": "11876d",
+        "hash": "d13224d6",
+        "encoded": "end",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "11876d",
+        "hash": "95486fdf",
+        "encoded": "subgraph%20VM%20Security",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "11876d",
+        "hash": "7f649668",
+        "encoded": "D%5BWindows%20Firewall%5D",
+        "prevChunkIds": []
+      },
+      "175": {
+        "chunkId": "11876d",
+        "hash": "19cf9a4c",
+        "encoded": "E%5BRunner%20Service%20Account%5D",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "11876d",
+        "hash": "692c8a61",
+        "encoded": "F%5BFile%20System%20Permissions%5D",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "11876d",
+        "hash": "75429766",
+        "encoded": "end",
+        "prevChunkIds": []
+      },
+      "179": {
+        "chunkId": "11876d",
+        "hash": "f27d00d4",
+        "encoded": "A%20%3C--%3E%7CHTTPS%20only%7C%20B",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "11876d",
+        "hash": "7b20cdcf",
+        "encoded": "B%20--%3E%20C",
+        "prevChunkIds": []
+      },
+      "181": {
+        "chunkId": "11876d",
+        "hash": "755177f7",
+        "encoded": "C%20--%3E%20D",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "11876d",
+        "hash": "d75cfaad",
+        "encoded": "D%20--%3E%20E",
+        "prevChunkIds": []
+      },
+      "183": {
+        "chunkId": "11876d",
+        "hash": "d93be19e",
+        "encoded": "E%20--%3E%20F",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "11876d",
+        "hash": "43beec0e",
+        "encoded": "style%20A%20fill:#24292e,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "11876d",
+        "hash": "1d12e4c9",
+        "encoded": "style%20B%20fill:#E53935,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "11876d",
+        "hash": "0d854dc3",
+        "encoded": "style%20D%20fill:#FFA726,stroke:#fff,color:#000",
+        "prevChunkIds": []
+      },
+      "188": {
+        "chunkId": "11876d",
+        "hash": "9c195bb5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "190": {
+        "chunkId": "11876d",
+        "hash": "873616d5",
+        "encoded": "###%20Security%20Layers",
+        "prevChunkIds": []
+      },
+      "192": {
+        "chunkId": "11876d",
+        "hash": "42c7b909",
+        "encoded": "1.%20**GCP%20Firewall**",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "11876d",
+        "hash": "4d6c0c86",
+        "encoded": "-%20Blocks%20all%20inbound%20except%20RDP%20(3389)",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "11876d",
+        "hash": "3dec66fa",
+        "encoded": "-%20Allows%20all%20outbound%20HTTPS%20(443)",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "11876d",
+        "hash": "c8d40e83",
+        "encoded": "2.%20**Windows%20Firewall**",
+        "prevChunkIds": []
+      },
+      "197": {
+        "chunkId": "11876d",
+        "hash": "83eb22a7",
+        "encoded": "-%20Default%20deny%20inbound",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "11876d",
+        "hash": "19232fc9",
+        "encoded": "-%20Allows%20runner%20service%20outbound",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "11876d",
+        "hash": "ae0705e2",
+        "encoded": "3.%20**Runner%20Isolation**",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "11876d",
+        "hash": "28b66e84",
+        "encoded": "-%20Dedicated%20service%20account",
+        "prevChunkIds": []
+      },
+      "202": {
+        "chunkId": "11876d",
+        "hash": "09dfcc2c",
+        "encoded": "-%20Limited%20file%20system%20access",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "11876d",
+        "hash": "68382fe9",
+        "encoded": "-%20No%20admin%20privileges%20required%20for%20jobs",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "11876d",
+        "hash": "6e313dec",
+        "encoded": "4.%20**GitHub%20Permissions**",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "11876d",
+        "hash": "01ab1f4b",
+        "encoded": "-%20Workflow%20has%20%60contents:%20read%60%20only",
+        "prevChunkIds": []
+      },
+      "207": {
+        "chunkId": "11876d",
+        "hash": "a8b4671f",
+        "encoded": "-%20Cannot%20modify%20code%20without%20PR",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "11876d",
+        "hash": "43ff849d",
+        "encoded": "-%20No%20access%20to%20repository%20secrets%20(in%20simulation%20mode)",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "11876d",
+        "hash": "f9934ffd",
+        "encoded": "##%20Scaling%20Considerations",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "11876d",
+        "hash": "aabbc415",
+        "encoded": "###%20Single%20Runner%20Setup%20(Current)",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "11876d",
+        "hash": "72661432",
+        "encoded": "-%20**Capacity:**%201%20job%20at%20a%20time",
+        "prevChunkIds": []
+      },
+      "215": {
+        "chunkId": "11876d",
+        "hash": "f1c266d6",
+        "encoded": "-%20**Cost:**%20~$50/month%20(if%20running%2024/7)",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "11876d",
+        "hash": "84d7ad92",
+        "encoded": "-%20**Best%20for:**%20Small%20teams,%20demo/test%20environments",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "11876d",
+        "hash": "5e0788e3",
+        "encoded": "###%20Multi-Runner%20Setup%20(Future)",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "11876d",
+        "hash": "2589dfe5",
+        "encoded": "%60%60%60mermaid",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "11876d",
+        "hash": "7d1c916e",
+        "encoded": "graph%20TB",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "11876d",
+        "hash": "0bd6c3fe",
+        "encoded": "A%5BGitHub%20Job%20Queue%5D%20--%3E%20B%5BRunner%201%20-%20us-central1%5D",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "11876d",
+        "hash": "720c412b",
+        "encoded": "A%20--%3E%20C%5BRunner%202%20-%20us-east1%5D",
+        "prevChunkIds": []
+      },
+      "224": {
+        "chunkId": "11876d",
+        "hash": "d0a5ce5c",
+        "encoded": "A%20--%3E%20D%5BRunner%203%20-%20europe-west1%5D",
+        "prevChunkIds": []
+      },
+      "226": {
+        "chunkId": "11876d",
+        "hash": "5786a47b",
+        "encoded": "style%20A%20fill:#2088FF,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "227": {
+        "chunkId": "11876d",
+        "hash": "5902a6c1",
+        "encoded": "style%20B%20fill:#43A047,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "228": {
+        "chunkId": "11876d",
+        "hash": "a37b0f85",
+        "encoded": "style%20C%20fill:#43A047,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "229": {
+        "chunkId": "11876d",
+        "hash": "1e0771f9",
+        "encoded": "style%20D%20fill:#43A047,stroke:#fff,color:#fff",
+        "prevChunkIds": []
+      },
+      "230": {
+        "chunkId": "11876d",
+        "hash": "d827234d",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "232": {
+        "chunkId": "11876d",
+        "hash": "9908e5cf",
+        "encoded": "-%20**Capacity:**%203%20parallel%20jobs",
+        "prevChunkIds": []
+      },
+      "233": {
+        "chunkId": "11876d",
+        "hash": "3b523600",
+        "encoded": "-%20**Cost:**%20~$150/month%20(if%20all%20running%2024/7)",
+        "prevChunkIds": []
+      },
+      "234": {
+        "chunkId": "11876d",
+        "hash": "d38eec0c",
+        "encoded": "-%20**Best%20for:**%20Production%20environments,%20large%20teams",
+        "prevChunkIds": []
+      },
+      "236": {
+        "chunkId": "11876d",
+        "hash": "fc4637e5",
+        "encoded": "##%20Monitoring%20and%20Observability",
+        "prevChunkIds": []
+      },
+      "238": {
+        "chunkId": "11876d",
+        "hash": "71cd748f",
+        "encoded": "###%20Where%20to%20Find%20Logs",
+        "prevChunkIds": []
+      },
+      "240": {
+        "chunkId": "11876d",
+        "hash": "fc43c98f",
+        "encoded": "%7C%20Component%20%7C%20Log%20Location%20%7C%20Access%20Method%20%7C",
+        "prevChunkIds": []
+      },
+      "241": {
+        "chunkId": "11876d",
+        "hash": "92b30cd6",
+        "encoded": "%7C-----------%7C--------------%7C---------------%7C",
+        "prevChunkIds": []
+      },
+      "242": {
+        "chunkId": "11876d",
+        "hash": "860b8ce6",
+        "encoded": "%7C%20Workflow%20execution%20%7C%20GitHub%20Actions%20tab%20%7C%20Web%20UI%20%7C",
+        "prevChunkIds": []
+      },
+      "243": {
+        "chunkId": "11876d",
+        "hash": "4bc1cf26",
+        "encoded": "%7C%20Runner%20service%20%7C%20%60C:%5Cactions-runner%5C_diag%5C%60%20%7C%20RDP%20to%20VM%20%7C",
+        "prevChunkIds": []
+      },
+      "244": {
+        "chunkId": "11876d",
+        "hash": "61d5fcbf",
+        "encoded": "%7C%20PowerShell%20scripts%20%7C%20Console%20output%20in%20workflow%20logs%20%7C%20Web%20UI%20%7C",
+        "prevChunkIds": []
+      },
+      "245": {
+        "chunkId": "11876d",
+        "hash": "3a674139",
+        "encoded": "%7C%20GCP%20VM%20system%20%7C%20Cloud%20Console%20%E2%86%92%20Logging%20%7C%20Web%20UI%20%7C",
+        "prevChunkIds": []
+      },
+      "246": {
+        "chunkId": "11876d",
+        "hash": "3c8e0c5d",
+        "encoded": "%7C%20Windows%20Event%20Log%20%7C%20Event%20Viewer%20on%20VM%20%7C%20RDP%20to%20VM%20%7C",
+        "prevChunkIds": []
+      },
+      "248": {
+        "chunkId": "11876d",
+        "hash": "82501f93",
+        "encoded": "###%20Key%20Metrics%20to%20Monitor",
+        "prevChunkIds": []
+      },
+      "250": {
+        "chunkId": "11876d",
+        "hash": "67e0b42b",
+        "encoded": "-%20%E2%8C%9A%20**Job%20duration:**%20Should%20be%202-5%20minutes%20for%20simulation",
+        "prevChunkIds": []
+      },
+      "251": {
+        "chunkId": "11876d",
+        "hash": "a2379bc1",
+        "encoded": "-%20%F0%9F%92%BE%20**Disk%20usage:**%20Monitor%20%60C:%5Cactions-runner%5C_work%5C%60",
+        "prevChunkIds": []
+      },
+      "252": {
+        "chunkId": "11876d",
+        "hash": "5ab912d1",
+        "encoded": "-%20%F0%9F%A7%A0%20**Memory%20usage:**%20Should%20stay%20under%204%20GB",
+        "prevChunkIds": []
+      },
+      "253": {
+        "chunkId": "11876d",
+        "hash": "d1554f8f",
+        "encoded": "-%20%F0%9F%92%B8%20**GCP%20billing:**%20Check%20monthly%20spend",
+        "prevChunkIds": []
+      },
+      "255": {
+        "chunkId": "11876d",
+        "hash": "3748810d",
+        "encoded": "##%20Disaster%20Recovery",
+        "prevChunkIds": []
+      },
+      "257": {
+        "chunkId": "11876d",
+        "hash": "2a959143",
+        "encoded": "###%20Runner%20Failure",
+        "prevChunkIds": []
+      },
+      "259": {
+        "chunkId": "11876d",
+        "hash": "351080a7",
+        "encoded": "**Symptoms:**%20Runner%20shows%20offline,%20jobs%20stuck%20in%20queue",
+        "prevChunkIds": []
+      },
+      "261": {
+        "chunkId": "11876d",
+        "hash": "ca1652fa",
+        "encoded": "**Recovery:**",
+        "prevChunkIds": []
+      },
+      "262": {
+        "chunkId": "11876d",
+        "hash": "7cafa458",
+        "encoded": "1.%20RDP%20to%20VM",
+        "prevChunkIds": []
+      },
+      "263": {
+        "chunkId": "11876d",
+        "hash": "e7e2ef04",
+        "encoded": "2.%20Restart%20service:%20%60.%5Csvc.cmd%20restart%60",
+        "prevChunkIds": []
+      },
+      "264": {
+        "chunkId": "11876d",
+        "hash": "992f6885",
+        "encoded": "3.%20If%20persistent,%20re-register%20runner",
+        "prevChunkIds": []
+      },
+      "266": {
+        "chunkId": "11876d",
+        "hash": "89f9100e",
+        "encoded": "###%20VM%20Failure",
+        "prevChunkIds": []
+      },
+      "268": {
+        "chunkId": "11876d",
+        "hash": "3d0213c5",
+        "encoded": "**Symptoms:**%20Cannot%20RDP,%20runner%20offline%20for%20extended%20period",
+        "prevChunkIds": []
+      },
+      "270": {
+        "chunkId": "11876d",
+        "hash": "c0b58708",
+        "encoded": "**Recovery:**",
+        "prevChunkIds": []
+      },
+      "271": {
+        "chunkId": "11876d",
+        "hash": "6309da10",
+        "encoded": "1.%20GCP%20Console%20%E2%86%92%20VM%20instances",
+        "prevChunkIds": []
+      },
+      "272": {
+        "chunkId": "11876d",
+        "hash": "46221c7c",
+        "encoded": "2.%20Stop%20VM,%20then%20start",
+        "prevChunkIds": []
+      },
+      "273": {
+        "chunkId": "11876d",
+        "hash": "ff297d58",
+        "encoded": "3.%20If%20boot%20failure,%20create%20snapshot%20and%20restore%20to%20new%20VM",
+        "prevChunkIds": []
+      },
+      "275": {
+        "chunkId": "11876d",
+        "hash": "6d699183",
+        "encoded": "###%20Complete%20Rebuild",
+        "prevChunkIds": []
+      },
+      "277": {
+        "chunkId": "11876d",
+        "hash": "8fb6b1e3",
+        "encoded": "**Estimated%20time:**%2030%20minutes",
+        "prevChunkIds": []
+      },
+      "279": {
+        "chunkId": "11876d",
+        "hash": "c713055d",
+        "encoded": "1.%20Follow%20%5BQUICK_START.md%5D(QUICK_START.md)",
+        "prevChunkIds": []
+      },
+      "280": {
+        "chunkId": "11876d",
+        "hash": "5c84176c",
+        "encoded": "2.%20Previous%20artifacts%20are%20safe%20in%20GitHub",
+        "prevChunkIds": []
+      },
+      "281": {
+        "chunkId": "11876d",
+        "hash": "021fbde9",
+        "encoded": "3.%20No%20data%20loss%20(stateless%20runner)",
+        "prevChunkIds": []
+      },
+      "283": {
+        "chunkId": "11876d",
+        "hash": "753b636d",
+        "encoded": "##%20Cost%20Breakdown",
+        "prevChunkIds": []
+      },
+      "285": {
+        "chunkId": "11876d",
+        "hash": "983b7544",
+        "encoded": "###%20Monthly%20Cost%20Estimate%20(Running%2024/7)",
+        "prevChunkIds": []
+      },
+      "287": {
+        "chunkId": "11876d",
+        "hash": "75f88289",
+        "encoded": "%7C%20Resource%20%7C%20Cost%20%7C",
+        "prevChunkIds": []
+      },
+      "288": {
+        "chunkId": "11876d",
+        "hash": "66d64813",
+        "encoded": "%7C----------%7C------%7C",
+        "prevChunkIds": []
+      },
+      "289": {
+        "chunkId": "11876d",
+        "hash": "4f1c2fa4",
+        "encoded": "%7C%20e2-standard-2%20VM%20%7C%20$49.28%20%7C",
+        "prevChunkIds": []
+      },
+      "290": {
+        "chunkId": "11876d",
+        "hash": "5e126637",
+        "encoded": "%7C%2050%20GB%20disk%20%7C%20$2.00%20%7C",
+        "prevChunkIds": []
+      },
+      "291": {
+        "chunkId": "11876d",
+        "hash": "eb2da41b",
+        "encoded": "%7C%20Network%20egress%20(typical)%20%7C%20$1-5%20%7C",
+        "prevChunkIds": []
+      },
+      "292": {
+        "chunkId": "11876d",
+        "hash": "5b2baeb9",
+        "encoded": "%7C%20**Total**%20%7C%20**~$52-56/month**%20%7C",
+        "prevChunkIds": []
+      },
+      "294": {
+        "chunkId": "11876d",
+        "hash": "fba427b1",
+        "encoded": "###%20Cost%20Optimization",
+        "prevChunkIds": []
+      },
+      "296": {
+        "chunkId": "11876d",
+        "hash": "e7f0c4de",
+        "encoded": "**Option%201:%20Stop%20when%20not%20in%20use**",
+        "prevChunkIds": []
+      },
+      "297": {
+        "chunkId": "11876d",
+        "hash": "7804e45f",
+        "encoded": "-%20Manual%20stop/start%20via%20GCP%20Console",
+        "prevChunkIds": []
+      },
+      "298": {
+        "chunkId": "11876d",
+        "hash": "09c1d660",
+        "encoded": "-%20Cost:%20~$2/month%20(storage%20only)%20+%20runtime%20hours",
+        "prevChunkIds": []
+      },
+      "300": {
+        "chunkId": "11876d",
+        "hash": "7a12a19d",
+        "encoded": "**Option%202:%20Scheduled%20start/stop**",
+        "prevChunkIds": []
+      },
+      "301": {
+        "chunkId": "11876d",
+        "hash": "7665ef3f",
+        "encoded": "-%20Use%20GCP%20Cloud%20Scheduler",
+        "prevChunkIds": []
+      },
+      "302": {
+        "chunkId": "11876d",
+        "hash": "e34968b4",
+        "encoded": "-%20Example:%20Run%209%20AM%20-%206%20PM%20weekdays%20only",
+        "prevChunkIds": []
+      },
+      "303": {
+        "chunkId": "11876d",
+        "hash": "1726dcaa",
+        "encoded": "-%20Cost:%20~$15-20/month",
+        "prevChunkIds": []
+      },
+      "305": {
+        "chunkId": "11876d",
+        "hash": "14530266",
+        "encoded": "**Option%203:%20Spot/Preemptible%20VM**",
+        "prevChunkIds": []
+      },
+      "306": {
+        "chunkId": "11876d",
+        "hash": "5b06565c",
+        "encoded": "-%2060-91%25%20cheaper%20than%20standard%20VMs",
+        "prevChunkIds": []
+      },
+      "307": {
+        "chunkId": "11876d",
+        "hash": "e4a6ac71",
+        "encoded": "-%20May%20be%20interrupted%20with%2030-second%20notice",
+        "prevChunkIds": []
+      },
+      "308": {
+        "chunkId": "11876d",
+        "hash": "11ed8af7",
+        "encoded": "-%20Cost:%20~$12-20/month%20(if%20running%2024/7)",
+        "prevChunkIds": []
+      },
+      "310": {
+        "chunkId": "11876d",
+        "hash": "d926e41c",
+        "encoded": "##%20Performance%20Benchmarks",
+        "prevChunkIds": []
+      },
+      "312": {
+        "chunkId": "11876d",
+        "hash": "b6410c98",
+        "encoded": "###%20Typical%20Workflow%20Execution%20Times",
+        "prevChunkIds": []
+      },
+      "314": {
+        "chunkId": "11876d",
+        "hash": "70839854",
+        "encoded": "%7C%20Step%20%7C%20Duration%20%7C",
+        "prevChunkIds": []
+      },
+      "315": {
+        "chunkId": "11876d",
+        "hash": "b307c421",
+        "encoded": "%7C------%7C----------%7C",
+        "prevChunkIds": []
+      },
+      "316": {
+        "chunkId": "11876d",
+        "hash": "9f93ad85",
+        "encoded": "%7C%20Checkout%20%7C%205-10%20seconds%20%7C",
+        "prevChunkIds": []
+      },
+      "317": {
+        "chunkId": "11876d",
+        "hash": "d436d028",
+        "encoded": "%7C%20Validate%20configuration%20%7C%202-3%20seconds%20%7C",
+        "prevChunkIds": []
+      },
+      "318": {
+        "chunkId": "11876d",
+        "hash": "2f921b60",
+        "encoded": "%7C%20Run%20smoke%20test%20%7C%205-10%20seconds%20%7C",
+        "prevChunkIds": []
+      },
+      "319": {
+        "chunkId": "11876d",
+        "hash": "5e4d5067",
+        "encoded": "%7C%20Simulate%20image%20build%20%7C%2030-60%20seconds%20%7C",
+        "prevChunkIds": []
+      },
+      "320": {
+        "chunkId": "11876d",
+        "hash": "2cf34317",
+        "encoded": "%7C%20Validate%20artifacts%20%7C%202-3%20seconds%20%7C",
+        "prevChunkIds": []
+      },
+      "321": {
+        "chunkId": "11876d",
+        "hash": "b4c4c4c6",
+        "encoded": "%7C%20Generate%20Tanium%20package%20%7C%205-10%20seconds%20%7C",
+        "prevChunkIds": []
+      },
+      "322": {
+        "chunkId": "11876d",
+        "hash": "7b89a236",
+        "encoded": "%7C%20Upload%20artifacts%20%7C%205-15%20seconds%20%7C",
+        "prevChunkIds": []
+      },
+      "323": {
+        "chunkId": "11876d",
+        "hash": "74a8db5f",
+        "encoded": "%7C%20**Total**%20%7C%20**~1-2%20minutes**%20%7C",
+        "prevChunkIds": []
+      },
+      "325": {
+        "chunkId": "11876d",
+        "hash": "f995f8b4",
+        "encoded": "###%20Machine%20Type%20Comparison",
+        "prevChunkIds": []
+      },
+      "327": {
+        "chunkId": "11876d",
+        "hash": "dbef4f75",
+        "encoded": "%7C%20Machine%20Type%20%7C%20vCPUs%20%7C%20RAM%20%7C%20Workflow%20Time%20%7C%20Monthly%20Cost%20%7C",
+        "prevChunkIds": []
+      },
+      "328": {
+        "chunkId": "11876d",
+        "hash": "6ff3e80e",
+        "encoded": "%7C--------------%7C-------%7C-----%7C---------------%7C-------------%7C",
+        "prevChunkIds": []
+      },
+      "329": {
+        "chunkId": "11876d",
+        "hash": "cef2e66f",
+        "encoded": "%7C%20e2-medium%20%7C%202%20%7C%204%20GB%20%7C%20~3-4%20min%20%7C%20$24.27%20%7C",
+        "prevChunkIds": []
+      },
+      "330": {
+        "chunkId": "11876d",
+        "hash": "df0a35fd",
+        "encoded": "%7C%20e2-standard-2%20%7C%202%20%7C%208%20GB%20%7C%20~1-2%20min%20%7C%20$49.28%20%7C",
+        "prevChunkIds": []
+      },
+      "331": {
+        "chunkId": "11876d",
+        "hash": "5165085c",
+        "encoded": "%7C%20e2-standard-4%20%7C%204%20%7C%2016%20GB%20%7C%20~1-2%20min%20%7C%20$98.56%20%7C",
+        "prevChunkIds": []
+      },
+      "333": {
+        "chunkId": "11876d",
+        "hash": "b1935833",
+        "encoded": "**Recommendation:**%20Start%20with%20%60e2-standard-2%60%20for%20best%20balance%20of%20performance%20and%20cost.",
+        "prevChunkIds": []
+      },
+      "335": {
+        "chunkId": "11876d",
+        "hash": "f553f5f9",
+        "encoded": "##%20References",
+        "prevChunkIds": []
+      },
+      "337": {
+        "chunkId": "11876d",
+        "hash": "5a1eb579",
+        "encoded": "-%20%5BGitHub%20Self-Hosted%20Runners%20Documentation%5D(https://docs.github.com/en/actions/hosting-your-own-runners)",
+        "prevChunkIds": []
+      },
+      "338": {
+        "chunkId": "11876d",
+        "hash": "04210912",
+        "encoded": "-%20%5BGCP%20Compute%20Engine%20Pricing%5D(https://cloud.google.com/compute/pricing)",
+        "prevChunkIds": []
+      },
+      "339": {
+        "chunkId": "11876d",
+        "hash": "805213fd",
+        "encoded": "-%20%5BWindows%20Server%20on%20GCP%5D(https://cloud.google.com/compute/docs/instances/windows)",
+        "prevChunkIds": []
+      },
+      "341": {
+        "chunkId": "11876d",
+        "hash": "cbee60bc",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "343": {
+        "chunkId": "11876d",
+        "hash": "f767de45",
+        "encoded": "**Next%20Steps:**",
+        "prevChunkIds": []
+      },
+      "344": {
+        "chunkId": "11876d",
+        "hash": "b3d811e5",
+        "encoded": "-%20Review%20%5BSELF_HOSTED_SETUP.md%5D(SELF_HOSTED_SETUP.md)%20for%20setup%20instructions",
+        "prevChunkIds": []
+      },
+      "345": {
+        "chunkId": "11876d",
+        "hash": "c388fd31",
+        "encoded": "-%20Read%20%5BREADME.md%5D(README.md)%20for%20project%20overview",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

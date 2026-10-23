@@ -1,0 +1,11 @@
+artifacts/*
+!artifacts/.gitkeep
+packer/output-*/
+packer/packer_cache/
+*.iso
+*.wim
+*.vhdx
+*.vhd
+*.pkrvars.hcl
+!*.pkrvars.hcl.example
+.env

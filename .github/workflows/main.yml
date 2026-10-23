@@ -248,7 +248,7 @@ jobs:
         working-directory: ./image-factory-demo
 
     env:
-      GCP_PROJECT_ID: burner-anstiwar-7035
+      GCP_PROJECT_ID: sap-mcdslingshotinst-prd-mg
       GCP_ZONE: us-central1-a
       WINDOWS_SOURCE_IMAGE: ${{ vars.WINDOWS_SOURCE_IMAGE }}
       WINDOWS_SOURCE_IMAGE_PROJECT_ID: ${{ vars.WINDOWS_SOURCE_IMAGE_PROJECT_ID }}
